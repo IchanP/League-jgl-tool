@@ -8,8 +8,22 @@
 
 # test_name:
 #  stage: allowed names: .pre, build, test, deploy, .post
+#  image: the image to be used, make sure it's specific!!
+#  before_script: To make sure the command to be run in the job is installed
+#   - the command to be run before the actual script part
 #  script: 
 #  - command to run the test, look into jest
+#   after_script:
+#     - Same as before script, except after
+#  More about command: for the job to be executed: command available, pip (npm), python (javascript(?))
+# Will always run inside a docker container, hence why an image is required
+# So I will need an image that has npm and javascript?
+stages: 
+- test
+- build
+- deploy
+- my-custom-stage
+
 
 build-job:
   stage: build
@@ -22,7 +36,7 @@ own-test:
     - echo "Is this working?"
 
 test-job1:
-  stage: test
+  stage: my-custom-stage
   script:
     - echo "This job tests something"
 
