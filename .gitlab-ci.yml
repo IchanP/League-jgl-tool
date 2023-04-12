@@ -17,7 +17,7 @@ build-job:
     - echo "Hello, $GITLAB_USER_LOGIN!"
 
 own-test:
-  stage: testing the name
+  stage: test
   script:
     - echo "Is this working?"
 
