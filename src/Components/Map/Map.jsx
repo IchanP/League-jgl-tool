@@ -2,6 +2,7 @@ import './map.css'
 import React from 'react'
 import map from './images/map11.png'
 import JungleCamp from '../JungleCamp/JungleCamp'
+import { CampSelectionContext } from '../../Contexts/CampSelectionContext'
 
 const Map = () => {
 
@@ -78,18 +79,22 @@ const Map = () => {
 		},
 	]
 
-	return ( 
-		<div className="mapwrap">
-			<img src={map} alt="gamemap" className="mapholder" />
-			{camps.map((camp) =>  (
-				<JungleCamp 
-					key={camp.position}
-					theCamp={camp.position}
-					goldValue={camp.goldValue}
-					expValue={camp.expValue}
-				/>
-			))}
-		</div>
+	return (
+		<CampSelectionContext.Consumer>
+			{() => (
+				<div className="mapwrap">
+					<img src={map} alt="gamemap" className="mapholder" />
+					{camps.map((camp) => (
+						<JungleCamp
+							key={camp.position}
+							theCamp={camp.position}
+							goldValue={camp.goldValue}
+							expValue={camp.expValue}
+						/>
+					))}
+				</div>
+			)}
+		</CampSelectionContext.Consumer>
 	)
 }
  

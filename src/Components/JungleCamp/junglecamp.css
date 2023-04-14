@@ -18,6 +18,10 @@
     object-fit: cover;
     object-position: center center;
 }
+p {
+    position: relative;
+    z-index: 5000;
+}
 
 #bluesentinelimg, #redbramblebackimg {
     max-width: 120%;
