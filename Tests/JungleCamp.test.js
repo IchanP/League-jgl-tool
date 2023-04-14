@@ -52,3 +52,4 @@ describe('JungleCamp component', () => {
 		expect(grompBlueButton).toHaveAttribute('data-iscampselected', 'false')
 	})
 })
+

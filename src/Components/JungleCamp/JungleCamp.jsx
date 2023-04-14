@@ -35,7 +35,7 @@ const JungleCamp = ({ theCamp, goldValue, expValue }) => {
 					removeFromCampNumber(e.target.parentNode)
 				}
 			}}>
-				{campSelected && <p>{orderInRoute}</p>}
+				{campSelected && <p className="campOrder" data-testid={theCamp}>{orderInRoute}</p>}
 				<img src={`./images/${campName}.png`} alt={campName} className="campImage" id={campName + 'img'}></img> 
 			</button>
 		</>

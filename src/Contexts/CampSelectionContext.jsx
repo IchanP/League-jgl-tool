@@ -11,13 +11,14 @@ const CampSelectionContextProvider = ({children}) => {
 	const addToCampNumber = (e) => {
 		setCampNumber(campNumber + 1)
 		setSelectedCamps([...selectedCamps, e])
-		console.log(selectedCamps)
 	}
 	const removeFromCampNumber = (e) => {
-		setSelectedCamps(selectedCamps.filter((element) => element !== e))
-		setCampNumber(campNumber - 1)
-		console.log(selectedCamps)
+		const updatedSelectedCamps = selectedCamps.filter((element) => element !== e)
+		setSelectedCamps(updatedSelectedCamps)
+		setCampNumber(updatedSelectedCamps.length)
+		return updatedSelectedCamps
 	}
+  
 	return <CampSelectionContext.Provider
 		value={{
 			// Add attributes here

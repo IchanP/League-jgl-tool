@@ -1,3 +1,10 @@
+ @font-face {
+    font-family: 'Rowdies-Regular';
+    src: url('../../../public/font/Rowdies-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+ }
+
 .buttonCamp {
     position: absolute;
     left: 50%;
@@ -18,9 +25,15 @@
     object-fit: cover;
     object-position: center center;
 }
-p {
-    position: relative;
+.campOrder{
+    position: absolute;
+    top: -155%;
+    right: -55%;
+    font-family: 'Rowdies-Regular';
+    display: inline;
+    pointer-events: none;
     z-index: 5000;
+    font-size: 2rem;
 }
 
 #bluesentinelimg, #redbramblebackimg {
@@ -29,7 +42,7 @@ p {
 }
 
 .buttonCamp[data-iscampselected="true"] {
-    box-shadow: 0 0 10px 8px gold;
+    box-shadow: 0 0 10px 7px gold;
 }
 
 #gromp-blue {
