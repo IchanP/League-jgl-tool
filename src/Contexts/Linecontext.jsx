@@ -6,10 +6,21 @@ export const LineContext = createContext()
 const LineContextProvider = ({children}) => {
 
 	// Add code here
+	const [pressedButtons, setPressedButtons ] = useState([])
+
+	const addPressedButton = (id) => {
+		setPressedButtons([...pressedButtons, id])
+	}
+
+	const removePressedButton = (id) => {
+
+	}
 
 	return <LineContext.Provider
 		value={{
-			test: 'test'
+			addPressedButton: addPressedButton,
+			removePressedButton: removePressedButton,
+			pressedButtons: pressedButtons
 		}}
 	>
 		{children}

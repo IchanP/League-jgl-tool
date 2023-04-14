@@ -6,9 +6,9 @@ import { LineContext } from '../../Contexts/Linecontext'
 
 const Map = () => {
 
-	const { test } = useContext(LineContext)
+	const { pressedButtons } = useContext(LineContext)
 
-	console.log(test)
+	console.log(pressedButtons)
 
 	const camps = [
 		{
