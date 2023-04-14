@@ -1,11 +1,13 @@
 import './App.css'
 import React from 'react'
+import Footer from './Components/Footer/Footer'
 
 function App() {
 
 	return (
 		<div className="App">
-			<h1>JGL Tool</h1>
+			<h1 className="mainTitle">Jingle Gap</h1>
+			<Footer />
 		</div>
 	)
 }
