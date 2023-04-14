@@ -5,7 +5,14 @@
     border: 1px solid gold;
     overflow: auto;
     padding: 0.5rem;
+    position: relative;
 }
+
+.mapwrap::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+}
+
 .mapholder {
    width: 100%;
    float: left;

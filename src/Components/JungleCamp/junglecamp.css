@@ -1,0 +1,77 @@
+.buttonCamp {
+    position: absolute;
+    left: 50%;
+    width: 5%;
+    height: 5%;
+    border-radius: 50%;
+    border: none;
+}
+
+#gromp-blue {
+    bottom: 54.2%;
+    left: 13%;
+}
+
+#bluesentinel-blue {
+    bottom: 51%;
+    left: 23.5%;
+}
+
+#murkwolf-blue {
+    bottom: 41.6%;
+    left: 24%;
+}
+
+#raptor-blue {
+    bottom: 33.5%;
+    left: 45.3%;
+}
+
+#redbrambleback-blue {
+    bottom: 24.5%;
+}
+
+#krugs-blue {
+    bottom: 15%;
+    left: 54%;
+}
+
+#gromp-red {
+    bottom: 41%;
+    left: 82.3%;
+}
+
+#bluesentinel-red {
+    bottom: 44.1%;
+    left: 72%;
+}
+
+#murkwolf-red {
+    bottom: 53.5%;
+    left: 71.65%;
+}
+
+#raptor-red {
+    bottom: 61.7%;
+    left: 50.2%;
+}
+
+#redbrambleback-red {
+    bottom: 70.7%;
+    left: 45.6%;
+}
+
+#krugs-red {
+    left: 41.5%;
+    bottom: 80%;
+}
+
+#scuttlecrab-bottom {
+    bottom: 33%;
+    left: 68%;
+}
+
+#scuttlecrab-top {
+    bottom: 62.1%;
+    left: 27%;
+}
