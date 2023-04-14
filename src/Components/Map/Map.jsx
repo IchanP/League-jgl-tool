@@ -1,9 +1,14 @@
 import './map.css'
-import React from 'react'
+import React, { useContext } from 'react'
 import map from './images/map11.png'
 import JungleCamp from '../JungleCamp/JungleCamp'
+import { LineContext } from '../../Contexts/Linecontext'
 
 const Map = () => {
+
+	const { test } = useContext(LineContext)
+
+	console.log(test)
 
 	const camps = [
 		{

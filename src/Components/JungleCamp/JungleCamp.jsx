@@ -6,7 +6,6 @@ const JungleCamp = ({ theCamp, goldValue, expValue }) => {
 	const [campSelected, setCampSelected] = useState(false)
 
 	const [campName] = theCamp.split('-')
-	console.log(campName)
 	return ( 
 		// eslint-disable-next-line react/no-unknown-property
 		<button className="buttonCamp" id={theCamp} data-iscampselected={campSelected} onClick={() => {
