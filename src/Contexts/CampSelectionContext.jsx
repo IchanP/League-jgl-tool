@@ -11,10 +11,12 @@ const CampSelectionContextProvider = ({children}) => {
 	const addToCampNumber = (e) => {
 		setCampNumber(campNumber + 1)
 		setSelectedCamps([...selectedCamps, e])
+		console.log(selectedCamps)
 	}
 	const removeFromCampNumber = (e) => {
-		setCampNumber(campNumber - 1)
 		setSelectedCamps(selectedCamps.filter((element) => element !== e))
+		setCampNumber(campNumber - 1)
+		console.log(selectedCamps)
 	}
 	return <CampSelectionContext.Provider
 		value={{
