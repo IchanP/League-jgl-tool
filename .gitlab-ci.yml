@@ -18,24 +18,21 @@
 #  More about command: for the job to be executed: command available, pip (npm), python (javascript(?))
 # Will always run inside a docker container, hence why an image is required
 # So I will need an image that has npm and javascript?
-stages: 
-- test
-- build
-- deploy
-- my-custom-stage
+stages:
+  - test
 
 unit-test:
-image: node:latest
-stage: test
-before_script:
-  - npm install
-script: 
-  - npm run test:ci
-coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
-artifacts:
-  paths:
-    - coverage/
-  when: always
-  reports:
-    junit:
-      - junit.xml
+  image: node:latest
+  stage: test
+  before_script:
+    - npm install
+  script:
+    - npm run test:ci
+  coverage: /All files[^|]*\|[^|]*\s+([\d\.]+)/
+  artifacts:
+    paths:
+      - coverage/
+    when: always
+    reports:
+      junit:
+        - junit.xm
