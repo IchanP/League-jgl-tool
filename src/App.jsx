@@ -3,6 +3,7 @@ import React from 'react'
 import Footer from './Components/Footer/Footer'
 import Map from './Components/Map/Map'
 import CampSelectionContextProvider, {CampSelectionContext} from './Contexts/CampSelectionContext'
+import ExpDisplay from './Components/ExpDisplay/ExpDisplay'
 
 function App() {
 
