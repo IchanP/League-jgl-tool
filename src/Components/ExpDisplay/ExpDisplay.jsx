@@ -14,7 +14,7 @@ const ExpDisplay = () => {
 	return (  
 		<div className="expDisplay">
 			{selectedCamps.map((camp) => (
-				<p className="camp" key={camp.id}>{camp.id} and expvalue: {camp.dataset.expvalue} and goldvalue: {camp.dataset.goldvalue}</p>
+				<p className="campValues" key={camp.id}>{camp.id} and expvalue: {camp.dataset.expvalue} and goldvalue: {camp.dataset.goldvalue}</p>
 			))}
 			<p className="totalExp">Current: {totalExp}/{totalRequired[level -1]} Level: {level}</p>
 		</div>
