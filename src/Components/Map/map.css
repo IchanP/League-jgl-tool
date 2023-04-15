@@ -4,6 +4,7 @@
     max-height: 62%;
     border: 1px solid gold;
     overflow: auto;
+    overflow-x: visible;
     padding: 0.5rem;
     position: relative;
 }

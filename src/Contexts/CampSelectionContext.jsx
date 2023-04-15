@@ -12,6 +12,10 @@ const CampSelectionContextProvider = ({children}) => {
 		value={{
 			// Add attributes here
 			campNumber: campNumber,
+			resetAll: () => {
+				setSelectedCamps([])
+				setCampNumber(0)
+			},
 			addToCampNumber: (e) => {
 				setCampNumber(campNumber + 1)
 				setSelectedCamps([...selectedCamps, e])

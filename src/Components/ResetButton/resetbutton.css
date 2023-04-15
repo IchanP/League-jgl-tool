@@ -1,0 +1,11 @@
+.reset {
+    position: absolute;
+    right: 2%;
+    bottom: 2% ;
+    background-color: red;
+    width: 8%;
+    height: 8%;
+    border-radius: 50%;
+    border: none;
+    z-index: 5000;
+}
