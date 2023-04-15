@@ -17,3 +17,10 @@
    width: 100%;
    float: left;
 }
+
+@media screen and (max-width: 1920px) {
+    .mapwrap {
+        max-width: 50%;
+        max-height: 50%;
+    }
+  }
