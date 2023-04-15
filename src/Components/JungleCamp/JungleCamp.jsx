@@ -11,11 +11,11 @@ const JungleCamp = ({ theCamp, goldValue, expValue }) => {
 	const [campName] = theCamp.split('-')
 
 	useEffect(() => {
-	//	console.log(selectedCamps[selectedCamps.length - 1])
 		if (campSelected === true && selectedCamps[selectedCamps.length - 1]?.id === theCamp) {
 			setOrderInRoute(campNumber)
 			setPositionInArray(campNumber - 1)
 		} else if (campSelected === true) {
+			console.log('???')
 			if (theCamp !== selectedCamps[positionInArray]?.id) {
 				setOrderInRoute(orderInRoute - 1)
 				setPositionInArray(positionInArray - 1)
@@ -33,7 +33,7 @@ const JungleCamp = ({ theCamp, goldValue, expValue }) => {
 				} else {
 					setCampSelected(false)
 					setPositionInArray(null)
-					removeFromCampNumber(e.target.parentElement)
+					removeFromCampNumber(e.target)
 				}
 			}}>
 				{campSelected && <p className="campOrder" data-testid={theCamp}>{orderInRoute}</p>}
