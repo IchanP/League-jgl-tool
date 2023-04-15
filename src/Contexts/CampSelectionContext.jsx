@@ -13,7 +13,6 @@ const CampSelectionContextProvider = ({children}) => {
 			// Add attributes here
 			campNumber: campNumber,
 			addToCampNumber: (e) => {
-				console.log('adding camp:' + e)
 				setCampNumber(campNumber + 1)
 				setSelectedCamps([...selectedCamps, e])
 			},

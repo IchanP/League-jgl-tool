@@ -15,7 +15,6 @@ const JungleCamp = ({ theCamp, goldValue, expValue }) => {
 			setOrderInRoute(campNumber)
 			setPositionInArray(campNumber - 1)
 		} else if (campSelected === true) {
-			console.log('???')
 			if (theCamp !== selectedCamps[positionInArray]?.id) {
 				setOrderInRoute(orderInRoute - 1)
 				setPositionInArray(positionInArray - 1)

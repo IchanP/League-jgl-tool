@@ -4,7 +4,7 @@ import Map from '../src/Components/Map/Map'
 import '@testing-library/jest-dom'
 import CampSelectionContextProvider from '../src/Contexts/CampSelectionContext.jsx'
 import JungleCamp from '../src/Components/JungleCamp/JungleCamp'
-/*
+
 describe('JungleCamp component', () => {
 	it('should set campSelected to true when button with id "gromp-blue" is clicked once', async () => {
 		render(
@@ -158,27 +158,69 @@ describe('JungleCamp component', () => {
 		expect(scuttleTopButton).toHaveAttribute('data-iscampselected', 'false')
 		expect(scuttleBotButton).toHaveAttribute('data-iscampselected', 'false')
 	})
-}) */
+}) 
 
 describe('JungleCamp component', () => {
 	it('Should dynamically lower the camp order after earlier is unselected', async () => {
 		render(<CampSelectionContextProvider>
 			<JungleCamp theCamp='gromp-blue'></JungleCamp>
+			<JungleCamp theCamp='murkwolf-blue'></JungleCamp>
+			<JungleCamp theCamp='bluesentinel-blue'></JungleCamp>
+			<JungleCamp theCamp='raptor-blue'></JungleCamp>
+			<JungleCamp theCamp='krugs-blue'></JungleCamp>
 		</CampSelectionContextProvider>
 		)
 		
 		const grompBlueButton = document.getElementById('gromp-blue')
-		console.log(grompBlueButton.id)
+		const murkWolfBlueButton = document.getElementById('murkwolf-blue')
+		const bluesentinelBlueButton = document.getElementById('bluesentinel-blue')
+		const raptorBlueButton = document.getElementById('raptor-blue')
+		const krugsBlueButton = document.getElementById('krugs-blue')
+		act( () => {
+			fireEvent.click(grompBlueButton)
+		})
 
 		act(() => {
-			fireEvent.click(grompBlueButton)
+			fireEvent.click(murkWolfBlueButton)
+		})
+
+		act(() => {
+			fireEvent.click(bluesentinelBlueButton)
+		})
+		act(() => {
+			fireEvent.click(raptorBlueButton)
+		})
+		act(() => {
+			fireEvent.click(krugsBlueButton)
+		})
+
+		act(() => {
+			fireEvent.click(murkWolfBlueButton)
 		})
 
 		await waitFor(() => {
 			expect(grompBlueButton).toBeTruthy()
+			expect(murkWolfBlueButton).toBeTruthy()
+			expect(bluesentinelBlueButton).toBeTruthy()
+			expect(raptorBlueButton).toBeTruthy()
+			expect(krugsBlueButton).toBeTruthy()
 		})
 
-		const pElement = getByTestId(grompBlueButton, 'gromp-blue')
-		console.log(pElement.innerHTML)
+		const grompPelement = getByTestId(grompBlueButton, 'gromp-blue')
+		let murkwolfPelement = null
+		try {
+			murkwolfPelement = getByTestId(murkWolfBlueButton, 'murkwolf-blue')
+		} catch (error) {
+			// do nothing, murkwolfPelement will be null
+		}
+		const blueSentinelPelement = getByTestId(bluesentinelBlueButton, 'bluesentinel-blue')
+		const raptorPelement = getByTestId(raptorBlueButton, 'raptor-blue')
+		const krugsPelement = getByTestId(krugsBlueButton, 'krugs-blue')
+
+		expect(grompPelement).toHaveTextContent('1')
+		expect(murkwolfPelement).toBeNull()
+		expect(blueSentinelPelement).toHaveTextContent('2')
+		expect(raptorPelement).toHaveTextContent('3')
+		expect(krugsPelement).toHaveTextContent('4')
 	})
 })
