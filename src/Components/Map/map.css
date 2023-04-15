@@ -1,5 +1,5 @@
 .mapwrap {
-    grid-row: 2 / 3;
+    grid-row: 2 / span 1;
     width: 100%; /* make sure the width fills the column */
     height: 97%; /* limit the height to the height of the container */
     border: 1px solid gold;

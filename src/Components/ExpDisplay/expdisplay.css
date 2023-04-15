@@ -1,6 +1,7 @@
 .expDisplay {
-    width: 500px;
-    height: 500px;
+    grid-row: 1 / 2;
+    width: 100%;
+    height: 50%;
     background-color: blue;
     display: inline-block;
 }

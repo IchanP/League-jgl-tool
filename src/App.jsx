@@ -15,6 +15,9 @@ function App() {
 					{() => {
 						return <>
 							<Map />
+							<div className="div rightSideGrid">
+								<ExpDisplay />
+							</div>
 						</>
 					}}
 				</CampSelectionContext.Consumer>
