@@ -65,3 +65,68 @@ describe('Reset Button component', () => {
 		}
 	})
 })
+
+describe('Reset Button component', () => {
+	it('Should reset the total exp and level when pressed', async () => {
+		const {getByTestId} = render(
+			<CampSelectionContextProvider>
+				<App />
+			</CampSelectionContextProvider>
+		)
+
+		const grompButton = document.getElementById('gromp-blue')
+		const blueBuffButton = document.getElementById('bluesentinel-blue')
+		
+		act(() => {
+			fireEvent.click(grompButton)
+		})
+		act(() => {
+			fireEvent.click(blueBuffButton)
+		})
+
+		const totalExpP = getByTestId('totalExp')
+		expect(totalExpP).toHaveTextContent('245')
+		expect(totalExpP).toHaveTextContent('Level: 2')
+
+		const resetButton = getByTestId('resetButtonMap')
+
+		act(() => {
+			fireEvent.click(resetButton)
+		})
+
+		expect(totalExpP).toHaveTextContent('0/280')
+		expect(totalExpP).toHaveTextContent('Level: 1')
+	})
+})
+
+describe('Reset Button Component', () => {
+	it('Should set the data-iscampselected attribute on buttons to false', async () => {
+
+		const {getByTestId} = render(
+			<CampSelectionContextProvider>
+				<App />
+			</CampSelectionContextProvider>
+		)
+
+		const grompButton = document.getElementById('gromp-blue')
+		const blueBuffButton = document.getElementById('bluesentinel-blue')
+		
+		act(() => {
+			fireEvent.click(grompButton)
+		})
+		act(() => {
+			fireEvent.click(blueBuffButton)
+		})
+
+		expect(grompButton).toHaveAttribute('data-iscampselected', 'true')
+		expect(blueBuffButton).toHaveAttribute('data-iscampselected', 'true')
+
+		const resetButton = getByTestId('resetButtonMap')
+		act(() => {
+			fireEvent.click(resetButton)
+		})
+
+		expect(grompButton).toHaveAttribute('data-iscampselected', 'false')
+		expect(blueBuffButton).toHaveAttribute('data-iscampselected', 'false')
+	})
+})

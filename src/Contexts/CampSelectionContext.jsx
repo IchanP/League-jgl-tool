@@ -51,6 +51,8 @@ const CampSelectionContextProvider = ({children}) => {
 			resetAll: () => {
 				setSelectedCamps([])
 				setCampNumber(0)
+				setLevel(1)
+				setTotalExp(0)
 			},
 			addToCampNumber: (e) => {
 				expAdd(e.dataset.expvalue)
