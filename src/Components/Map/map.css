@@ -16,6 +16,7 @@
 .mapholder {
    width: 100%;
    float: left;
+   pointer-events: none;
 }
 
 @media screen and (max-width: 1920px) {
