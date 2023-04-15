@@ -24,6 +24,7 @@
     max-height: 105%;
     object-fit: cover;
     object-position: center center;
+    pointer-events: none;
 }
 .campOrder{
     position: absolute;
