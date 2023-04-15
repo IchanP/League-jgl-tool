@@ -223,4 +223,4 @@ describe('JungleCamp component', () => {
 		expect(raptorPelement).toHaveTextContent('3')
 		expect(krugsPelement).toHaveTextContent('4')
 	})
-})
+}) 
