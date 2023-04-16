@@ -1,9 +1,10 @@
 import React from 'react'
+import './button.css'
 
-const Button = ({Text}) => {
+const Button = ({Text, onClick}) => {
 	return ( 
 		<>
-			<p>{Text}</p>
+			<button className="sideB" onClick={onClick}>{Text}</button>
 		</>
 	)
 }
