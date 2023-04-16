@@ -1,6 +1,8 @@
 import React, { useEffect, useContext, useState } from 'react'
 import './expdisplay.css'
 import { CampSelectionContext } from '../../Contexts/CampSelectionContext'
+//import coinImage from './images/Coin_icon.png'
+import coinImage from './images/currency_rp_490px.png'
 
 const ExpDisplay = () => {
 	const { selectedCamps, totalExp, level, totalRequired, totalGold } = useContext(CampSelectionContext)
@@ -50,16 +52,23 @@ const ExpDisplay = () => {
 						<tr key={camp.id}>
 							<td className="campName-td">{camp.dataset.name}</td>
 							<td>{camp.dataset.level}</td>
-							<td>{camp.dataset.cumulativegold}</td>
+							<td style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>{camp.dataset.cumulativegold}
+								<img src={coinImage} alt="image of a coin" className="coinTd" />
+							</td>
 						</tr>
 					))}
 				</tbody>
 			</table>
-			<div className="expbar">		
-				<div className="expbar-inner" style={{width: `${totalExp/totalRequired[level-1]*100}%`}}></div>
-				<p className="totalExp" data-testid="totalExp"><span className="requiredExp">{totalExp}/{totalRequired[level -1]}</span> <br /> Level {level}</p>
+			<div className="undermapcontainer">
+				<div className="golddiv">
+					<p className="totalGold" data-testid="totalGold">{totalGold} </p>
+					<img src={coinImage} alt="image of a coin" className="coin" />
+				</div>
+				<div className="expbar">		
+					<div className="expbar-inner" style={{width: `${totalExp/totalRequired[level-1]*100}%`}}></div>
+					<p className="totalExp" data-testid="totalExp"><span className="requiredExp">{totalExp}/{totalRequired[level -1]}</span> <br /> Level {level}</p>
+				</div>
 			</div>
-			<p className="totalGold" data-testid="totalGold">Total Gold<br /> {totalGold} </p>
 		</div>
 
 	)
