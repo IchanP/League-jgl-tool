@@ -1,3 +1,10 @@
+@font-face {
+    font-family: 'Rowdies-Regular';
+    src: url('../../../public/font/Rowdies-Regular.ttf');
+    font-weight: normal;
+    font-style: normal;
+ }
+
 .expDisplay {
     grid-row: 1 / 2;
     width: 100%;
@@ -9,15 +16,41 @@
 
 .totalGold {
     position: absolute;
-    bottom: 0;
-    left: 5%;
+    bottom: -10%;
+    left: -80%;
 }
 
-.totalExp {
+.expbar {
+    width: 50%;
+    height: 4%;
+    border: 1px solid gold;
+    background-color: rgba(255, 255, 255, 0.288);
     position: absolute;
-    bottom: 0;
-    left: 50%;
+    bottom: -4.5%;
+    left: -40%;
     transform: translate(-50%, 0);
+    z-index: 1; /* Set a z-index for the parent element */
+}
+
+.expbar-inner {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    background-color: rgba(255, 0, 234, 0.534);
+    z-index: 100;
+  }
+
+.totalExp {
+    display: inline;
+    z-index: 5000;
+    font-weight: bold;
+    position: relative; /* Add a relative position */
+}
+.requiredExp {
+    color: black;
+    position: relative; /* Add a relative position */
+    z-index: 5000;
 }
 
 .expDisplay {

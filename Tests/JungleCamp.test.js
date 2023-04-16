@@ -12,7 +12,7 @@ describe('JungleCamp component', () => {
 				<Map />
 			</CampSelectionContextProvider>
 		)
-		const grompBlueButton = document.getElementById('gromp-blue')
+		const grompBlueButton = document.getElementById('Gromp-Blue')
 
 		act(() => {
 			fireEvent.click(grompBlueButton)
@@ -34,7 +34,7 @@ describe('JungleCamp component', () => {
 				<Map />
 			</CampSelectionContextProvider>
 		)
-		const grompBlueButton = document.getElementById('gromp-blue')
+		const grompBlueButton = document.getElementById('Gromp-Blue')
 
 		act(() => {
 			fireEvent.click(grompBlueButton)
@@ -61,20 +61,20 @@ describe('JungleCamp component', () => {
 				<Map />
 			</CampSelectionContextProvider>
 		)
-		const grompBlueButton = document.getElementById('gromp-blue')
-		const grompRedButton = document.getElementById('gromp-red')
-		const blueSentinelBlueButton = document.getElementById('bluesentinel-blue')
-		const blueSentinelRedButton = document.getElementById('bluesentinel-red')
-		const krugsRedButton = document.getElementById('krugs-red')
-		const krugsBlueButton = document.getElementById('krugs-blue')
-		const raptorsBlueButton = document.getElementById('raptor-blue')
-		const raptorsRedButton = document.getElementById('raptor-red')
-		const wolfsRedButton = document.getElementById('murkwolf-red')
-		const wolfsBlueButton = document.getElementById('murkwolf-blue')
-		const redBuffBlueButton = document.getElementById('redbrambleback-blue')
-		const redBuffRedButton = document.getElementById('redbrambleback-red')
-		const scuttleTopButton = document.getElementById('scuttlecrab-top')
-		const scuttleBotButton = document.getElementById('scuttlecrab-bottom')
+		const grompBlueButton = document.getElementById('Gromp-Blue')
+		const grompRedButton = document.getElementById('Gromp-Red')
+		const blueSentinelBlueButton = document.getElementById('Blue-Sentinel-Blue')
+		const blueSentinelRedButton = document.getElementById('Blue-Sentinel-Red')
+		const krugsRedButton = document.getElementById('Krugs-Red')
+		const krugsBlueButton = document.getElementById('Krugs-Blue')
+		const raptorsBlueButton = document.getElementById('Raptor-Blue')
+		const raptorsRedButton = document.getElementById('Raptor-Red')
+		const wolfsRedButton = document.getElementById('Murkwolf-Red')
+		const wolfsBlueButton = document.getElementById('Murkwolf-Blue')
+		const redBuffBlueButton = document.getElementById('Red-Brambleback-Blue')
+		const redBuffRedButton = document.getElementById('Red-Brambleback-Red')
+		const scuttleTopButton = document.getElementById('Scuttlecrab-Top')
+		const scuttleBotButton = document.getElementById('Scuttlecrab-Bottom')
 
 		act(() => {
 			fireEvent.click(grompBlueButton)

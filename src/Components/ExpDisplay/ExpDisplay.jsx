@@ -25,7 +25,6 @@ const ExpDisplay = () => {
 				selectedCamps[i].setAttribute('data-cumulativegold', currentGold)
 				selectedCamps[i].setAttribute('data-level', currentLevel)
 				selectedCamps[i].setAttribute('data-name', selectedCamps[i].id.split('-').join(' '))
-				console.log(selectedCamps[i].dataset.name)
 			}
 			setCopiedStateArray(selectedCamps)
 		}
@@ -56,8 +55,11 @@ const ExpDisplay = () => {
 					))}
 				</tbody>
 			</table>
-			<p className="totalExp" data-testid="totalExp">Current: {totalExp}/{totalRequired[level -1]} Level: {level}</p>
-			<p className="totalGold" data-testid="totalGold">{totalGold} Gold</p>
+			<div className="expbar">		
+				<div className="expbar-inner" style={{width: `${totalExp/totalRequired[level-1]*100}%`}}></div>
+				<p className="totalExp" data-testid="totalExp"><span className="requiredExp">{totalExp}/{totalRequired[level -1]}</span> <br /> Level {level}</p>
+			</div>
+			<p className="totalGold" data-testid="totalGold">Total Gold<br /> {totalGold} </p>
 		</div>
 
 	)

@@ -12,7 +12,6 @@ const JungleCamp = ({ theCamp, goldValue, expValue }) => {
 	const lastDashIndex = theCamp.lastIndexOf('-')
 	const campName = theCamp.substring(0, lastDashIndex)
 
-
 	useEffect(() => {
 		if (campSelected === true && selectedCamps[selectedCamps.length - 1]?.id === theCamp) {
 			setOrderInRoute(campNumber)

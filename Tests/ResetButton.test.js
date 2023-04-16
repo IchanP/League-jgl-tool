@@ -49,7 +49,7 @@ describe('Reset Button component', () => {
 				fireEvent.click(allButtons[i])
 			})
 		}
-		const pElements = document.getElementsByClassName('campValues')
+		const pElements = document.getElementsByClassName('campName-td')
 		for (let i = 0; i < 14; i++) {
 			expect(pElements[i]).toBeInTheDocument()
 		}
@@ -74,8 +74,8 @@ describe('Reset Button component', () => {
 			</CampSelectionContextProvider>
 		)
 
-		const grompButton = document.getElementById('gromp-blue')
-		const blueBuffButton = document.getElementById('bluesentinel-blue')
+		const grompButton = document.getElementById('Gromp-Blue')
+		const blueBuffButton = document.getElementById('Blue-Sentinel-Blue')
 		
 		act(() => {
 			fireEvent.click(grompButton)
@@ -86,7 +86,7 @@ describe('Reset Button component', () => {
 
 		const totalExpP = getByTestId('totalExp')
 		expect(totalExpP).toHaveTextContent('245')
-		expect(totalExpP).toHaveTextContent('Level: 2')
+		expect(totalExpP).toHaveTextContent('Level 2')
 
 		const resetButton = getByTestId('resetButtonMap')
 
@@ -95,7 +95,7 @@ describe('Reset Button component', () => {
 		})
 
 		expect(totalExpP).toHaveTextContent('0/280')
-		expect(totalExpP).toHaveTextContent('Level: 1')
+		expect(totalExpP).toHaveTextContent('Level 1')
 	})
 })
 
@@ -108,8 +108,8 @@ describe('Reset Button Component', () => {
 			</CampSelectionContextProvider>
 		)
 
-		const grompButton = document.getElementById('gromp-blue')
-		const blueBuffButton = document.getElementById('bluesentinel-blue')
+		const grompButton = document.getElementById('Gromp-Blue')
+		const blueBuffButton = document.getElementById('Blue-Sentinel-Blue')
 		
 		act(() => {
 			fireEvent.click(grompButton)

@@ -28,8 +28,8 @@
 }
 .campOrder{
     position: absolute;
-    top: -155%;
-    right: -55%;
+    top: -190%;
+    right: -75%;
     font-family: 'Rowdies-Regular';
     display: inline;
     pointer-events: none;
@@ -113,11 +113,4 @@
 #Scuttlecrab-Top {
     bottom: 62.1%;
     left: 27%;
-}
-
-@media screen and (max-width: 1920px) {
-    .campOrder {
-        right: -75%;
-        top: -190%; 
-    }
 }
