@@ -8,6 +8,7 @@ const CampSelectionContextProvider = ({children}) => {
 	const [campNumber, setCampNumber] = useState(0)
 	const [selectedCamps, setSelectedCamps] = useState([])
 	const [totalExp, setTotalExp] = useState(0)
+	const [totalGold, setTotalGold] = useState(0)
 	const [level, setLevel] = useState(1)
 	const totalRequired = [ 280, 380, 480, 580, 680, 780, 880, 980, 1080, 1180, 1280, 1380, 1480, 1580, 1680, 1780, 1880]
 	const expAdd = (expvalue) => {
@@ -48,20 +49,24 @@ const CampSelectionContextProvider = ({children}) => {
 			totalExp: totalExp,
 			level: level,
 			totalRequired: totalRequired,
+			totalGold: totalGold,
 			resetAll: () => {
 				setSelectedCamps([])
 				setCampNumber(0)
+				setTotalGold(0)
 				setLevel(1)
 				setTotalExp(0)
 			},
 			addToCampNumber: (e) => {
 				expAdd(e.dataset.expvalue)
+				setTotalGold(totalGold + Number(e.dataset.goldvalue))
 				setCampNumber(campNumber + 1)
 				setSelectedCamps([...selectedCamps, e])
 			},
 			removeFromCampNumber: (e) => {
 				expDetract(e.dataset.expvalue)
 				const updatedSelectedCamps = selectedCamps.filter((element) => element !== e)
+				setTotalGold(totalGold - Number(e.dataset.goldvalue))
 				setSelectedCamps(updatedSelectedCamps)
 				setCampNumber(updatedSelectedCamps.length)			
 			},

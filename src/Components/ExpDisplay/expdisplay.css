@@ -7,6 +7,12 @@
     position: relative;
 }
 
+.totalGold {
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+}
+
 .totalExp {
     position: absolute;
     bottom: 0;

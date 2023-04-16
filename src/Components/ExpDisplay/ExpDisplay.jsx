@@ -3,16 +3,17 @@ import './expdisplay.css'
 import { CampSelectionContext } from '../../Contexts/CampSelectionContext'
 
 const ExpDisplay = () => {
-	const { selectedCamps, totalExp, level, totalRequired } = useContext(CampSelectionContext)
+	const { selectedCamps, totalExp, level, totalRequired, totalGold } = useContext(CampSelectionContext)
 	const [copiedStateArray, setCopiedStateArray] = useState([])
 	const expThresholds = [0, 280, 660, 1140, 1720, 2400, 3180, 4060, 5040, 6120, 7300, 8580, 9960, 11440, 13020, 14700, 16480, 18360]
 	
 	useEffect(() => {
 		if (selectedCamps.length > 0) {
-			// Set initial data-expvalue and data-level
+			let currentGold = 0
 			let currentExp = 0
 			let currentLevel = 1
 			for (let i = 0; i < selectedCamps.length; i++) {
+				currentGold += Number(selectedCamps[i].dataset.goldvalue)
 				let expValue
 				i === 0
 					? expValue = Number(selectedCamps[i].dataset.expvalue) + 150
@@ -21,6 +22,7 @@ const ExpDisplay = () => {
 				if (currentExp >= expThresholds[currentLevel]) {
 					currentLevel++
 				}
+				selectedCamps[i].setAttribute('data-cumulativegold', currentGold)
 				selectedCamps[i].setAttribute('data-level', currentLevel)
 			}
 			setCopiedStateArray(selectedCamps)
@@ -47,12 +49,13 @@ const ExpDisplay = () => {
 						<tr key={camp.id}>
 							<td className="campName-td">{camp.id}</td>
 							<td>{camp.dataset.level}</td>
-							<td>{}</td>
+							<td>{camp.dataset.cumulativegold}</td>
 						</tr>
 					))}
 				</tbody>
 			</table>
 			<p className="totalExp" data-testid="totalExp">Current: {totalExp}/{totalRequired[level -1]} Level: {level}</p>
+			<p className="totalGold" data-testid="totalGold">{totalGold} Gold</p>
 		</div>
 
 	)
