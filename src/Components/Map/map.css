@@ -19,4 +19,5 @@
    width: 100%;
    float: left;
    pointer-events: none;
+   user-select: none;
 }
