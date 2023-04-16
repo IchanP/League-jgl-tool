@@ -13,7 +13,6 @@ const ExpDisplay = () => {
 			let currentExp = 0
 			let currentLevel = 1
 			for (let i = 0; i < selectedCamps.length; i++) {
-				console.log(Number(selectedCamps[i].dataset.expvalue))
 				let expValue
 				i === 0
 					? expValue = Number(selectedCamps[i].dataset.expvalue) + 150
@@ -22,9 +21,11 @@ const ExpDisplay = () => {
 				if (currentExp >= expThresholds[currentLevel]) {
 					currentLevel++
 				}
-				console.log(`currentExp: ${currentExp} and currentlevel ${currentLevel} and expthreshhold ${expThresholds[currentLevel]}`)
 				selectedCamps[i].setAttribute('data-level', currentLevel)
 			}
+			setCopiedStateArray(selectedCamps)
+		}
+		if(selectedCamps.length === 0) {
 			setCopiedStateArray(selectedCamps)
 		}
 	}, [selectedCamps])
