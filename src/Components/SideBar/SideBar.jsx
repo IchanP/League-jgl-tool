@@ -1,7 +1,7 @@
 import './sidebar.css'
 import React, { useContext } from 'react'
 import Button from '../Button/Button'
-import SideBarContextProvider, { SideBarContext } from '../../Contexts/SideBarContext'
+import  { SideBarContext } from '../../Contexts/SideBarContext'
 
 const SideBar = () => {
 
