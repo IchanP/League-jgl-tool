@@ -24,6 +24,8 @@ const ExpDisplay = () => {
 				}
 				selectedCamps[i].setAttribute('data-cumulativegold', currentGold)
 				selectedCamps[i].setAttribute('data-level', currentLevel)
+				selectedCamps[i].setAttribute('data-name', selectedCamps[i].id.split('-').join(' '))
+				console.log(selectedCamps[i].dataset.name)
 			}
 			setCopiedStateArray(selectedCamps)
 		}
@@ -39,7 +41,7 @@ const ExpDisplay = () => {
 			<table>
 				<thead>
 					<tr>
-						<th>Camp ID</th>
+						<th>Camp</th>
 						<th>Level</th>
 						<th>Cumulative Gold</th>
 					</tr>
@@ -47,7 +49,7 @@ const ExpDisplay = () => {
 				<tbody>
 					{copiedStateArray.map((camp) => (
 						<tr key={camp.id}>
-							<td className="campName-td">{camp.id}</td>
+							<td className="campName-td">{camp.dataset.name}</td>
 							<td>{camp.dataset.level}</td>
 							<td>{camp.dataset.cumulativegold}</td>
 						</tr>

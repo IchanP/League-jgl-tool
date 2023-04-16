@@ -8,7 +8,10 @@ const JungleCamp = ({ theCamp, goldValue, expValue }) => {
 	const [campSelected, setCampSelected] = useState(false)
 	const [orderInRoute, setOrderInRoute] = useState(null)
 	const [positionInArray, setPositionInArray] = useState(null)
-	const [campName] = theCamp.split('-')
+	// Some camps use - dashes
+	const lastDashIndex = theCamp.lastIndexOf('-')
+	const campName = theCamp.substring(0, lastDashIndex)
+
 
 	useEffect(() => {
 		if (campSelected === true && selectedCamps[selectedCamps.length - 1]?.id === theCamp) {

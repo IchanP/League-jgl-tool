@@ -9,72 +9,72 @@ const Map = () => {
 
 	const camps = [
 		{
-			position:'gromp-blue',
+			position:'Gromp-Blue',
 			expValue: 200,
 			goldValue: 80,
 		},
 		{
-			position: 'bluesentinel-blue',
+			position: 'Blue-Sentinel-Blue',
 			expValue: 175,
 			goldValue: 90,    
 		},
 		{
-			position: 'murkwolf-blue',
+			position: 'Murkwolf-Blue',
 			expValue: 160,
 			goldValue: 85,
 		},
 		{
-			position: 'raptor-blue',
+			position: 'Raptor-Blue',
 			expValue: 150,
 			goldValue: 75,
 		},
 		{
-			position: 'redbrambleback-blue',
+			position: 'Red-Brambleback-Blue',
 			expValue: 175,
 			goldValue: 90,
 		},
 		{
-			position: 'krugs-blue',
+			position: 'Krugs-Blue',
 			expValue: 201,
 			goldValue: 109,
 		},
 		{
-			position: 'scuttlecrab-top',
+			position: 'Scuttlecrab-Top',
 			expValue: 180,
 			goldValue: 55,
 		},
 		{
-			position: 'scuttlecrab-bottom',
+			position: 'Scuttlecrab-Bottom',
 			expValue: 180,
 			goldValue: 55,
 		}, 	
 		{
-			position:'gromp-red',
+			position:'Gromp-Red',
 			expValue: 200,
 			goldValue: 80,
 		},
 		{
-			position: 'bluesentinel-red',
+			position: 'Blue-Sentinel-Red',
 			expValue: 175,
 			goldValue: 90,    
 		},
 		{
-			position: 'murkwolf-red',
+			position: 'Murkwolf-Red',
 			expValue: 160,
 			goldValue: 85,
 		},
 		{
-			position: 'raptor-red',
+			position: 'Raptor-Red',
 			expValue: 150,
 			goldValue: 75,
 		},
 		{
-			position: 'redbrambleback-red',
+			position: 'Red-Brambleback-Red',
 			expValue: 175,
 			goldValue: 90,
 		},
 		{
-			position: 'krugs-red',
+			position: 'Krugs-Red',
 			expValue: 201,
 			goldValue: 109,
 		},
