@@ -1,7 +1,7 @@
 .mapwrap {
     grid-row: 2 / span 1;
     width: 100%; /* make sure the width fills the column */
-    height: 97%; /* limit the height to the height of the container */
+    height: 75.5%; /* limit the height to the height of the container */
     border: 1px solid gold;
     overflow: auto;
     overflow-x: visible;
@@ -20,4 +20,10 @@
    float: left;
    pointer-events: none;
    user-select: none;
+}
+
+@media screen and (min-height: 1250px) {
+  .mapwrap {
+    height: 71%;
+  }
 }

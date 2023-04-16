@@ -16,11 +16,11 @@
     position: absolute;
     display: flex;
     z-index: 1;
-    top: 50%;
-    left: -123%;
+    top: 77.6%;
+    left: -122.3%;
+    width: 114.2%;
     background-color: rgba(39, 39, 46, 0.76);
-    width: 115%;
-    height: 5%;
+    height: 9%;
     align-items: top;
     gap: 20%; /* set gap between flex items */
 }
@@ -66,7 +66,7 @@
 
 .expbar {
     width: 30%;
-    height: 35%;
+    height: 31%;
     border: 1px solid gold;
     background-color: rgba(255, 255, 255, 0.288);
     transform: translate(-50%, 0);
@@ -125,4 +125,14 @@
     padding-left: 2%;
   }
 
-  
+  @media screen and (min-height: 1250px) {
+    .undermapcontainer {
+      top: 72.5%;
+      height: 7%;
+      left: -122.3%;
+      width: 113.7%;
+    }
+    .expbar {
+      height: 30%;
+    }
+  }
