@@ -13,3 +13,41 @@
     left: 50%;
     transform: translate(-50%, 0);
 }
+
+.expDisplay {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    max-width: 800px;
+    table-layout: fixed;
+  }
+  
+  th, td {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    text-align: center;
+  }
+  
+  th {
+    background-color: #f2f2f2;
+    color: black;
+    text-align: center;
+    width: 120px;
+    white-space: nowrap;
+  }
+  
+  td {
+    border-bottom: 1px solid #ddd;
+  }
+
+  .campName-td {
+    text-align: left;
+    padding-left: 2%;
+  }
+
+  
