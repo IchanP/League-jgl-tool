@@ -44,6 +44,6 @@ linting:
 
   script:
     - npm i eslint \
-    - eslint-plugin-react
+     eslint-plugin-react
     # run eslint
     - node_modules/eslint/bin/eslint.js .
