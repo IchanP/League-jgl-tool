@@ -5,19 +5,36 @@ export const SideBarContext = createContext()
 
 const SideBarContextProvider = ({children}) => {
 
-	const [valuesActive, setValuesActive] = useState(false)
 	const [importActive, setImportActive] = useState(false)
+	const [valuesActive, setValuesActive] = useState(false)
+	const [valuesClicked, setValuesClicked] = useState(false)
+    
+	const valuesOnEnter = () => {
+		setValuesActive(true)
+	}
+
+	const valuesOnLeave = () => {
+		valuesClicked === false
+			? setValuesActive(false)
+			: {}
+	}
 
 	const valuesOnClick = () => {
+		if(valuesActive && valuesClicked) {
+			setValuesClicked(false)
+			setValuesActive(false)
+		} else if (valuesActive && !valuesClicked) {
+			setValuesClicked(true)
+			setValuesActive(true)
+		}  
 		if (!valuesActive) {
 			setValuesActive(true)
+			setValuesClicked(true)
 			setImportActive(false)
-		} else {
-			setValuesActive(false)
 		}
 	}
+
 	const importOnClick = () => {
-		setValuesActive(false)
 		setImportActive(true)
 	}
 	const exportOnClick = () => {
@@ -29,6 +46,8 @@ const SideBarContextProvider = ({children}) => {
 		value={{
 			importActive: importActive,
 			valuesActive: valuesActive,
+			valuesOnEnter: valuesOnEnter,
+			valuesOnLeave: valuesOnLeave,
 			valuesOnClick: valuesOnClick,
 			importOnClick: importOnClick,
 			exportOnClick: exportOnClick,

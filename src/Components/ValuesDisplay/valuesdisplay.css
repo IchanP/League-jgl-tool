@@ -2,9 +2,10 @@
     position: absolute;
     width: 23%;
     left: -23%;
-    top: 9.5%;
-    height: 200px;
-    background-color: rgba(39, 39, 46, 0.76);
+    top: 0%;
+    border-right: 1px solid white;
+    height: auto;
+    background-color: #1a1a1f;
     transition: all 0.3s ease-in-out;
   }
   
