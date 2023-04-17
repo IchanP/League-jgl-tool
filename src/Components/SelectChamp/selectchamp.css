@@ -1,0 +1,21 @@
+.champcontainer {
+    background-color: white;
+    height: 30%;
+    width: 21%;
+    position: absolute;
+    top: 58%;
+    left: 7%;
+}
+
+.champimages {
+    width: 100%;
+    height: 80%;
+    background-color: orange;
+    display: flex;
+}
+
+.searchbarcontainer {
+    height: 20%;
+    width: 100%;
+    background-color: aqua;
+}
