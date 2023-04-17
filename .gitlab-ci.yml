@@ -43,7 +43,6 @@ linting:
   stage: lint
 
   script:
-    - npm i eslint \
-    - eslint-plugin-react
+    - npm i eslint eslint-plugin-react
     # run eslint
     - node_modules/eslint/bin/eslint.js .
