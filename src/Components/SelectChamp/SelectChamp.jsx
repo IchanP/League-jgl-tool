@@ -28,13 +28,15 @@ const SelectChamp = () => {
 			<div className="searchbarcontainer">
 				<input type="text" value={input} onChange={handleInput} />
 				{matches.length > 0 && (
-					<select>
-						{matches.map(match => (
-							<option key={match} value={match}>
-								{match}
-							</option>
-						))}
-					</select>
+					<div className="options">
+						<ul className="optul">
+							{matches.map(match => (
+								<li key={match} value={match}>
+									{match}
+								</li>
+							))}
+						</ul>
+					</div>
 				)}
 			</div>
 		</div>

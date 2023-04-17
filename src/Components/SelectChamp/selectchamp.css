@@ -19,3 +19,13 @@
     width: 100%;
     background-color: aqua;
 }
+
+.options {
+    background-color: rgb(3, 58, 58);
+    position: absolute;
+    width: 100%;
+    top: 0;
+    max-height: 80%;
+    overflow-y: auto;
+
+}
