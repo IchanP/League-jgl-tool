@@ -10,6 +10,8 @@
     background-color: rgba(39, 39, 46, 0.76);
     display: inline-block;
     grid-row: 1 / span auto;
+    border-left: 1px solid white;
+    border-right: 1px solid white;
 }
 
 .undermapcontainer {
@@ -107,10 +109,12 @@
     table-layout: fixed;
   }
   
-  th {
+.exp-count-th {
     background-color: rgba(255, 255, 255, 0.062);
     color: white;
     text-align: center;
+    border-top: 1px solid white;
+    border-bottom: 1px solid white;
     width: 120px;
     white-space: nowrap;
   }

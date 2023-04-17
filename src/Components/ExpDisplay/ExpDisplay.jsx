@@ -42,9 +42,9 @@ const ExpDisplay = () => {
 			<table>
 				<thead>
 					<tr>
-						<th>Camp</th>
-						<th>Level</th>
-						<th>Cumulative Gold</th>
+						<th className='exp-count-th'>Camp</th>
+						<th className='exp-count-th'>Level</th>
+						<th className='exp-count-th'>Cumulative Gold</th>
 					</tr>
 				</thead>
 				<tbody>

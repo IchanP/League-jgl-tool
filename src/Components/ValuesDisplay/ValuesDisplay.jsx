@@ -51,9 +51,10 @@ const ValuesDisplay = () => {
 				<table>
 					<thead>
 						<tr>
-							<th>Camp</th>
-							<th>Experience</th>
-							<th>Gold</th>
+							<th className='value-display-th'>Camp</th>
+							<th className='value-display-th'>Experience</th>
+							<th className='value-display-th'
+							>Gold</th>
 						</tr>
 					</thead>
 					<tbody>
