@@ -12,14 +12,14 @@ export const championNames = [
 	'Aurelion Sol',
 	'Azir',
 	'Bard',
-	'Bel\'veth',
+	'Bel\'Veth',
 	'Blitzcrank',
 	'Brand',
 	'Braum',
 	'Caitlyn',
 	'Camille',
 	'Cassiopeia',
-	'Cho\'gath',
+	'Cho\'Gath',
 	'Corki',
 	'Darius',
 	'Diana',
@@ -50,8 +50,8 @@ export const championNames = [
 	'Jayce',
 	'Jhin',
 	'Jinx',
-	'K\'sante',
-	'Kai\'sa',
+	'K\'Sante',
+	'Kai\'Sa',
 	'Kalista',
 	'Karma',
 	'Karthus',
@@ -60,10 +60,10 @@ export const championNames = [
 	'Kayle',
 	'Kayn',
 	'Kennen',
-	'Kha\'zix',
+	'Kha\'Zix',
 	'Kindred',
 	'Kled',
-	'Kog\'maw',
+	'Kog\'Maw',
 	'LeBlanc',
 	'Lee Sin',
 	'Leona',
@@ -87,7 +87,7 @@ export const championNames = [
 	'Nidalee',
 	'Nilah',
 	'Nocturne',
-	'Nunu & Willump',
+	'Nunu',
 	'Olaf',
 	'Orianna',
 	'Ornn',
@@ -139,7 +139,7 @@ export const championNames = [
 	'Varus',
 	'Vayne',
 	'Veigar',
-	'Vel\'koz',
+	'Vel\'Koz',
 	'Vex',
 	'Vi',
 	'Viego',
@@ -236,4 +236,42 @@ export 	const camps = [
 		expValue: 201,
 		goldValue: 109,
 	},
+]
+
+export 	const campValues = [
+	{
+		name: 'Gromp',
+		exp: '200',
+		gold: '80'
+	},
+	{
+		name: 'Blue Sentinel',
+		exp: '175',
+		gold: '90'
+	},
+	{
+		name: 'Murk Wolf',
+		exp: '160',
+		gold: '85'
+	},
+	{
+		name: 'Raptors',
+		exp: '150',
+		gold: '75'
+	},
+	{
+		name: 'Red Brambleback',
+		exp: '175',
+		gold: '90'
+	},
+	{
+		name: 'Krugs',
+		exp: '201',
+		gold: '109'
+	},
+	{
+		name: 'Scuttlecrab',
+		exp: '180',
+		gold: '55'
+	}
 ]

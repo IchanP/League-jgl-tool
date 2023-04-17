@@ -2,47 +2,10 @@ import './valuesdisplay.css'
 import React, { useContext } from 'react'
 import { SideBarContext } from '../../Contexts/SideBarContext'
 import coinImage from '../../assets/currency_rp_490px.png'
+import { campValues } from '../../Data/Arrays'
 
 const ValuesDisplay = () => {
-
-	const campValues = [
-		{
-			name: 'Gromp',
-			exp: '200',
-			gold: '80'
-		},
-		{
-			name: 'Blue Sentinel',
-			exp: '175',
-			gold: '90'
-		},
-		{
-			name: 'Murk Wolf',
-			exp: '160',
-			gold: '85'
-		},
-		{
-			name: 'Raptors',
-			exp: '150',
-			gold: '75'
-		},
-		{
-			name: 'Red Brambleback',
-			exp: '175',
-			gold: '90'
-		},
-		{
-			name: 'Krugs',
-			exp: '201',
-			gold: '109'
-		},
-		{
-			name: 'Scuttlecrab',
-			exp: '180',
-			gold: '55'
-		}
-	]
-
+	
 	const { valuesActive } = useContext(SideBarContext)
 
 	return ( 
