@@ -2,7 +2,7 @@ import React, { useEffect, useContext, useState } from 'react'
 import './expdisplay.css'
 import { CampSelectionContext } from '../../Contexts/CampSelectionContext'
 //import coinImage from './images/Coin_icon.png'
-import coinImage from './images/currency_rp_490px.png'
+import coinImage from '../../assets/currency_rp_490px.png'
 
 const ExpDisplay = () => {
 	const { selectedCamps, totalExp, level, totalRequired, totalGold } = useContext(CampSelectionContext)
@@ -42,9 +42,9 @@ const ExpDisplay = () => {
 			<table>
 				<thead>
 					<tr>
-						<th>Camp</th>
-						<th>Level</th>
-						<th>Cumulative Gold</th>
+						<th className='exp-count-th'>Camp</th>
+						<th className='exp-count-th'>Level</th>
+						<th className='exp-count-th'>Cumulative Gold</th>
 					</tr>
 				</thead>
 				<tbody>
