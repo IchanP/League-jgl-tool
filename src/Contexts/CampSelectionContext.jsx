@@ -9,6 +9,15 @@ export const CampSelectionContext = createContext()
  * @returns {JSX.Element} - The JSX element to be rendered.
  */
 const CampSelectionContextProvider = ({children}) => {
+	const champNames = window.location.pathname.split('/')[3].split(':')
+	const [selectedChampions, setSelectedChampions] = useState(() => {
+		if (champNames) {
+			const nameArray = champNames.map(champ => champ.replace(/%20/g, ' '))
+			return nameArray
+		} else {
+			return []
+		}
+	})
 	const [sideSelected, setSideSelected] = useState(window.location.pathname.split('/')[1])
 	const [campNumber, setCampNumber] = useState(0)
 	const [selectedCamps, setSelectedCamps] = useState([])
@@ -39,10 +48,14 @@ const CampSelectionContextProvider = ({children}) => {
 
 	useEffect(() => {
 		const selectedCampIds = selectedCamps.map((camp) => camp.id).join(':')
+		const selectedChamps = selectedChampions.map((champ) => champ).join(':')
 		const encodedIds = window.btoa(selectedCampIds)
-		const newUrl = `${window.location.origin}/${sideSelected}/${encodedIds}`
+		let newUrl = `${window.location.origin}/${sideSelected}/${encodedIds}/`
+		if(selectedChamps) {
+			newUrl += `${selectedChamps}`
+		}
 		window.history.pushState(null, null, newUrl)
-	}, [sideSelected, selectedCamps])	
+	}, [sideSelected, selectedCamps, selectedChampions])	
 
 	/**
 	 * Reduces experience for the totalExp state.
@@ -106,7 +119,9 @@ const CampSelectionContextProvider = ({children}) => {
 			selectedCamps: selectedCamps,
 			setSelectedCamps: setSelectedCamps,
 			setSideSelected: setSideSelected,
-			sideSelected: sideSelected
+			sideSelected: sideSelected,
+			selectedChampions: selectedChampions,
+			setSelectedChampions: setSelectedChampions
 		}}
 	>
 		{children}

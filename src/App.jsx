@@ -9,17 +9,22 @@ import SelectChamp from './Components/SelectChamp/SelectChamp'
 
 function App() {
 
+	const { setSelectedCamps, selectedCamps, setSelectedChampions} = useContext(CampSelectionContext)
 	const pathname = window.location.pathname
-	const { setSelectedCamps, selectedCamps, setSideSelected, sideSelected} = useContext(CampSelectionContext)
-
-	/**
-	 * Fetches and selects camps based on the encoded IDs present in the URL pathname.
-	 */
 	useEffect(() => {
 		setSelectedCamps([])
 		const pathnameParts = pathname.split('/')
-		const encodedIds = pathname.split('/').slice(2).join('/') // skip the first two parts of the pathname
 		const newSideSelected = pathnameParts[1]
+		const encodedIds = pathname.split('/').slice(2, -1).join('/')
+		const lastPart = pathnameParts[pathnameParts.length - 1]
+		if (lastPart && lastPart !== encodedIds) {
+			// Ahri:Taliyah part is present in the URL
+			const champNames = lastPart.split(':')
+			champNames.forEach((champ, index) => {
+				champNames[index] = champ.replace(/%20/g, ' ')
+			})
+			setSelectedChampions(champNames)
+		}
 		if (encodedIds) {
 			const decodedIds = window.atob(encodedIds)
 			const campIds = decodedIds.split(':')
@@ -42,6 +47,7 @@ function App() {
 			blueBox.checked = false
 		}
 	}, [])
+
   
 	/**
 	 * Clicks on all selected camps whenever the selectedCamps state updates.
@@ -69,12 +75,12 @@ function App() {
 							<div className="div rightSideGrid">
 								<ExpDisplay />
 							</div>
+							<SelectChamp>
+							</SelectChamp>
 						</>
 					}}
 				</CampSelectionContext.Consumer>
 			</CampSelectionContextProvider>
-			<SelectChamp>
-			</SelectChamp>
 			<Footer />
 		</div>
 	)

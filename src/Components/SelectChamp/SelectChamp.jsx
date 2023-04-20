@@ -1,7 +1,8 @@
 import './selectchamp.css'
-import React from 'react'
+import React, { useContext } from 'react'
 import { useState } from 'react'
 import { championNames } from '../../Data/Arrays'
+import { CampSelectionContext } from '../../Contexts/CampSelectionContext'
 
 /**
  * Defines a champion selector element.
@@ -9,10 +10,10 @@ import { championNames } from '../../Data/Arrays'
  */
 const SelectChamp = () => {
 
-      
+    const {selectedChampions, setSelectedChampions} = useContext(CampSelectionContext)
 	const [input, setInput] = useState('')
 	const [matches, setMatches] = useState([])
-	const [selectedChampions, setSelectedChampions] = useState([])
+	
 
 	/**
 	 * Handles the event, displaying the matching champions.
