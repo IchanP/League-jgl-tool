@@ -1,5 +1,5 @@
 .footer {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     max-height: 150px; /* Adjust this value to match the height of your footer */
     height: auto;

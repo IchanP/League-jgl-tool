@@ -8,6 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "jest",
+    "lint": "npx eslint src/**/*.{js,jsx} || exit 0",
     "test:ci": "npm run test -- --testResultsProcessor=\"jest-junit\" --watchAll=false --ci --coverage"
   },
   "dependencies": {
