@@ -9,4 +9,5 @@
     right: 0;
     text-align: center; /* optionally center the content of the footer */
     background-color: red;
+    z-index: 2;
   }
