@@ -25,6 +25,7 @@
     object-fit: cover;
     object-position: center center;
     pointer-events: none;
+    user-select: none;
 }
 .campOrder{
     position: absolute;
@@ -47,70 +48,76 @@
 }
 
 #Gromp-Blue {
-    bottom: 54.2%;
+    top: 41%;
     left: 13%;
 }
 
 #Blue-Sentinel-Blue {
-    bottom: 51%;
+    top: 43.7%;
     left: 23.5%;
 }
 
 #Murkwolf-Blue {
-    bottom: 41.6%;
+    top: 53%;
     left: 24%;
 }
 
 #Raptor-Blue {
-    bottom: 33.5%;
+    top: 61.7%;
     left: 45.3%;
 }
 
 #Red-Brambleback-Blue {
-    bottom: 24.5%;
+    top: 70.5%;
 }
 
 #Krugs-Blue {
-    bottom: 15%;
+    top: 79.5%;
     left: 54%;
 }
 
 #Gromp-Red {
-    bottom: 41%;
+    top: 54%;
     left: 82.3%;
 }
 
 #Blue-Sentinel-Red {
-    bottom: 44.1%;
+    top: 51%;
     left: 72%;
 }
 
 #Murkwolf-Red {
-    bottom: 53.5%;
+    top: 41.5%;
     left: 71.65%;
 }
 
 #Raptor-Red {
-    bottom: 61.7%;
+    top: 33%;
     left: 50.2%;
 }
 
 #Red-Brambleback-Red {
-    bottom: 70.7%;
+    top: 24%;
     left: 45.6%;
 }
 
 #Krugs-Red {
     left: 41.5%;
-    bottom: 80%;
+    top: 15%;
 }
 
 #Scuttlecrab-Bottom {
-    bottom: 33%;
+    top: 61.5%;
     left: 68%;
 }
 
 #Scuttlecrab-Top {
-    bottom: 62.1%;
+    top: 32.5%;
     left: 27%;
 }
+
+@media screen and (min-height: 1250px) {
+    .campOrder {
+      top: -135%;
+    }
+  }

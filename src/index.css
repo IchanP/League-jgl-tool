@@ -20,11 +20,11 @@ body {
   min-width: 320px;
   min-height: 100vh;
   position: relative;
-  overflow: hidden;
 }
 
-@media screen and (max-height: 899px) {
-  body {
-    overflow: auto;
-  }
+.test {
+
+  position: fixed;
+  left: 0;
+
 }
