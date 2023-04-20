@@ -2,6 +2,15 @@ import React, { useContext, useEffect, useState } from 'react'
 import './junglecamp.css'
 import { CampSelectionContext } from '../../Contexts/CampSelectionContext'
 
+
+/**
+ * Defines a jungle camp element.
+ * @param {object} root0 - The react props object.
+ * @param {string} root0.theCamp - The name of the camp.
+ * @param {string} root0.goldValue  - The gold value of the camp.
+ * @param {string} root0.expValue - The exp value of the camp.
+ * @returns {HTMLElement} - Returns a jungle camp element.
+ */
 const JungleCamp = ({ theCamp, goldValue, expValue }) => {
 	
 	const {campNumber, addToCampNumber, removeFromCampNumber, selectedCamps} = useContext(CampSelectionContext)

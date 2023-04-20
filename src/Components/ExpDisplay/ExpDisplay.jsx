@@ -1,13 +1,16 @@
 import React, { useEffect, useContext, useState } from 'react'
 import './expdisplay.css'
 import { CampSelectionContext } from '../../Contexts/CampSelectionContext'
-//import coinImage from './images/Coin_icon.png'
 import coinImage from '../../assets/currency_rp_490px.png'
+import { expThresholds } from '../../Data/Arrays'
 
+/**
+ * Defines the EXP display.
+ * @returns {HTMLElement} - Returns an exp display.
+ */
 const ExpDisplay = () => {
 	const { selectedCamps, totalExp, level, totalRequired, totalGold } = useContext(CampSelectionContext)
 	const [copiedStateArray, setCopiedStateArray] = useState([])
-	const expThresholds = [0, 280, 660, 1140, 1720, 2400, 3180, 4060, 5040, 6120, 7300, 8580, 9960, 11440, 13020, 14700, 16480, 18360]
 	
 	useEffect(() => {
 		if (selectedCamps.length > 0) {

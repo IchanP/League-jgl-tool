@@ -3,6 +3,11 @@ import React from 'react'
 
 export const CampSelectionContext = createContext()
 
+/**
+ * A React component that provides context for exp and gold values.
+ * @param {React.PropsWithChildren} props - The component props.
+ * @returns {JSX.Element} - The JSX element to be rendered.
+ */
 const CampSelectionContextProvider = ({children}) => {
 
 	const [campNumber, setCampNumber] = useState(0)
@@ -11,6 +16,11 @@ const CampSelectionContextProvider = ({children}) => {
 	const [totalGold, setTotalGold] = useState(0)
 	const [level, setLevel] = useState(1)
 	const totalRequired = [ 280, 380, 480, 580, 680, 780, 880, 980, 1080, 1180, 1280, 1380, 1480, 1580, 1680, 1780, 1880]
+
+	/**
+	 * Adds experience to the totalExp state.
+	 * @param {number} expvalue - The exp value to work with.
+	 */
 	const expAdd = (expvalue) => {
 		if (selectedCamps.length === 0) {
 			setTotalExp((Number(expvalue) + 150) - totalRequired[level - 1])
@@ -26,6 +36,10 @@ const CampSelectionContextProvider = ({children}) => {
 			}
 		}
 	}
+	/**
+	 * Reduces experience for the totalExp state.
+	 * @param {number} expvalue - The exp value to work with.
+	 */
 	const expDetract = (expvalue) => {
 		if(selectedCamps.length === 1) {
 			setTotalExp(0)
@@ -50,6 +64,9 @@ const CampSelectionContextProvider = ({children}) => {
 			level: level,
 			totalRequired: totalRequired,
 			totalGold: totalGold,
+			/**
+			 * Resets all states.
+			 */
 			resetAll: () => {
 				setSelectedCamps([])
 				setCampNumber(0)
@@ -57,12 +74,20 @@ const CampSelectionContextProvider = ({children}) => {
 				setLevel(1)
 				setTotalExp(0)
 			},
+			/**
+			 * Saves the element target and retrieves values saved as attributes.
+			 * @param {HTMLElement} e - The event target.
+			 */
 			addToCampNumber: (e) => {
 				expAdd(e.dataset.expvalue)
 				setTotalGold(totalGold + Number(e.dataset.goldvalue))
 				setCampNumber(campNumber + 1)
 				setSelectedCamps([...selectedCamps, e])
 			},
+			/**
+			 * Removes the element target from state array and detracts its values from states.
+			 * @param {HTMLElement} e - The event target.
+			 */
 			removeFromCampNumber: (e) => {
 				expDetract(e.dataset.expvalue)
 				const updatedSelectedCamps = selectedCamps.filter((element) => element !== e)
