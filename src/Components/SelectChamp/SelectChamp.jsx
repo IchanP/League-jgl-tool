@@ -64,9 +64,10 @@ const SelectChamp = () => {
 	return ( 
 		<div className="champcontainer">
 			<div className="champimages">
-				{selectedChampions.map((champ) => (
+				{console.log(selectedChampions)}
+			{selectedChampions.length > 0 && selectedChampions.map((champ) => (
 					<img src={`/images/${champ}.png`} alt="" className="selectedChampImage" key={champ} onClick={imgClick} data-champion={champ}/>
-				))}
+				))} 
 			</div>
 			<div className="searchbarcontainer">
 				<input type="text" value={input} onChange={handleInput} onFocus={handleInput} onBlur={handleBlur} className='champInput' placeholder='Search for your champion'/>

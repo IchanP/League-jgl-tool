@@ -9,16 +9,17 @@ export const CampSelectionContext = createContext()
  * @returns {JSX.Element} - The JSX element to be rendered.
  */
 const CampSelectionContextProvider = ({children}) => {
-	const champNames = window.location.pathname.split('/')[3].split(':')
+	const champNames = window.location.pathname.split('/')[3]?.split(':')
 	const [selectedChampions, setSelectedChampions] = useState(() => {
-		if (champNames) {
+		if (champNames && champNames[0]) { // add an additional check here
 			const nameArray = champNames.map(champ => champ.replace(/%20/g, ' '))
 			return nameArray
 		} else {
 			return []
 		}
 	})
-	const [sideSelected, setSideSelected] = useState(window.location.pathname.split('/')[1])
+	
+	const [sideSelected, setSideSelected] = useState(window.location.pathname.split('/')[1] ? window.location.pathname.split('/')[1] : 'All')
 	const [campNumber, setCampNumber] = useState(0)
 	const [selectedCamps, setSelectedCamps] = useState([])
 	const [totalExp, setTotalExp] = useState(0)
