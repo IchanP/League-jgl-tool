@@ -14,13 +14,19 @@ const JungleCamp = ({ theCamp, goldValue, expValue }) => {
 		if (campSelected === true && selectedCamps[selectedCamps.length - 1]?.id === theCamp) {
 			setOrderInRoute(campNumber)
 			setPositionInArray(campNumber - 1)
-		} else if (campSelected === true) {
-			if (theCamp !== selectedCamps[positionInArray]?.id) {
-				setOrderInRoute(orderInRoute - 1)
-				setPositionInArray(positionInArray - 1)
-			}
+		} else if (campSelected === true && theCamp !== selectedCamps[positionInArray]?.id) {
+			setOrderInRoute(orderInRoute - 1)
+			setPositionInArray(positionInArray - 1)
 		}
 	},[campNumber])
+
+	useEffect(() => {
+		if (selectedCamps.length === 0) {
+			setCampSelected(false)
+			setOrderInRoute(null)
+			setPositionInArray(null)
+		}
+	},[selectedCamps])
 
 	return ( 
 		<>
