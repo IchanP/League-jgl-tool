@@ -1,25 +1,32 @@
 .champcontainer {
-    background-color: white;
     height: 30%;
+    max-height: 200%;
     width: 21%;
     position: absolute;
-    top: 58%;
+    bottom: 12%;
     left: 7%;
 }
 
 .champimages {
     width: 100%;
     height: 80%;
-    background-color: orange;
     display: flex;
     flex-direction: row-reverse;
     flex-wrap: wrap-reverse;
     justify-content: center;
     align-content: flex-start;
-    gap: 0.5%;
+    gap: 1.34%;
 }
 
 
+.champInput {
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 50%;
+}
 
 .selectedChampImage {
     width: 40px;
@@ -29,9 +36,9 @@
 
 
 .searchbarcontainer {
+    background-color: rgba(39, 39, 46, 0.76);
     height: 20%;
     width: 100%;
-    background-color: aqua;
     position: relative;
     /* Added */
 }
@@ -89,13 +96,4 @@
     font-size: 1.5rem;
     justify-content: center;
     flex: 1;
-}
-
-.champInput {
-    width: 80%;
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%);
-    height: 50%;
 }

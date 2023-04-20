@@ -35,7 +35,6 @@ const SelectChamp = () => {
 	 * @param {Event} event - The event that triggered the function.
 	 */
 	const imgClick = (event) => {
-		console.log(event.target.dataset.champion)
 		setSelectedChampions(selectedChampions.filter(name => name !== event.target.dataset.champion))
 	}
 
