@@ -12,7 +12,8 @@ const SelectChamp = () => {
       
 	const [input, setInput] = useState('')
 	const [matches, setMatches] = useState([])
-	
+	const [selectedChampions, setSelectedChampions] = useState([])
+
 	/**
 	 * Handles the event, displaying the matching champions.
 	 * @param {Event} event - The event that triggers the function.
@@ -20,21 +21,36 @@ const SelectChamp = () => {
 	const handleInput = (event) => {
 		const input = event.target.value
 		const inputToLower = input.toLowerCase()
-		// Find matching names
-		const matches = championNames.filter(name => name.toLowerCase().includes(inputToLower))
-      
+		// Find matching names that are not already selected
+		const matches = championNames.filter(name => 
+			name.toLowerCase().includes(inputToLower) && !selectedChampions.includes(name)
+		)
 		setInput(input)
 		setMatches(matches)
 	}
+
   
+	/**
+	 * Removes the selected champion from the selectedChamps array.
+	 * @param {Event} event - The event that triggered the function.
+	 */
+	const imgClick = (event) => {
+		console.log(event.target.dataset.champion)
+		setSelectedChampions(selectedChampions.filter(name => name !== event.target.dataset.champion))
+	}
+
 	/**
 	 * Adds the champion selected to selected champions.
 	 * @param {HTMLElement} e - The element that was clicked.
 	 */
 	const liClick = (e) => {
-		console.log(e.dataset.value)
+		const champName = e.dataset.value
+		if (!selectedChampions.includes(champName)) {
+			setSelectedChampions([...selectedChampions, champName])
+		}
 		setMatches([])
 	}
+	
 
 	/**
 	 * Resets the shown champions.
@@ -48,10 +64,12 @@ const SelectChamp = () => {
 	return ( 
 		<div className="champcontainer">
 			<div className="champimages">
-                
+				{selectedChampions.map((champ) => (
+					<img src={`./images/${champ}.png`} alt="" className="selectedChampImage" key={champ} onClick={imgClick} data-champion={champ}/>
+				))}
 			</div>
 			<div className="searchbarcontainer">
-				<input type="text" value={input} onChange={handleInput} onFocus={handleInput} onBlur={handleBlur}/>
+				<input type="text" value={input} onChange={handleInput} onFocus={handleInput} onBlur={handleBlur} className='champInput' placeholder='Search for your champion'/>
 				{matches.length > 0 && (
 					<div className="options">
 						<ul className="optul">

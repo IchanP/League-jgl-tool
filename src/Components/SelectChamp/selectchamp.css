@@ -12,7 +12,21 @@
     height: 80%;
     background-color: orange;
     display: flex;
+    flex-direction: row-reverse;
+    flex-wrap: wrap-reverse;
+    justify-content: center;
+    align-content: flex-start;
+    gap: 0.5%;
 }
+
+
+
+.selectedChampImage {
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+}
+
 
 .searchbarcontainer {
     height: 20%;
@@ -75,4 +89,13 @@
     font-size: 1.5rem;
     justify-content: center;
     flex: 1;
+}
+
+.champInput {
+    width: 80%;
+    position: absolute;
+    top: 5%;
+    left: 50%;
+    transform: translate(-50%);
+    height: 50%;
 }
