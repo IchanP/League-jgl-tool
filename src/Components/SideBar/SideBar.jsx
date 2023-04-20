@@ -5,6 +5,10 @@ import  { SideBarContext } from '../../Contexts/SideBarContext'
 
 
 
+/**
+ * Defines a JSX sidebar element.
+ * @returns {HTMLElement} Returns a sidebar element.
+ */
 const SideBar = () => {
 
 	const {valuesOnClick, importOnClick, exportOnClick, valuesOnEnter, valuesOnLeave} = useContext(SideBarContext)

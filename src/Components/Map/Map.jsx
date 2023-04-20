@@ -6,6 +6,10 @@ import { CampSelectionContext } from '../../Contexts/CampSelectionContext'
 import ResetButton from '../ResetButton/ResetButton'
 import { camps } from '../../Data/Arrays'
 
+/**
+ * Defines a map element containing the jungle camps.
+ * @returns {HTMLElement} Returns a map element.
+ */
 const Map = () => {
 
 	return (

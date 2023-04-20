@@ -4,6 +4,10 @@ import { SideBarContext } from '../../Contexts/SideBarContext'
 import coinImage from '../../assets/currency_rp_490px.png'
 import { campValues } from '../../Data/Arrays'
 
+/**
+ * Defines a JSX elements for camp values.
+ * @returns {HTMLElement} - Returns a JSX element displaying the values.
+ */
 const ValuesDisplay = () => {
 	
 	const { valuesActive } = useContext(SideBarContext)
