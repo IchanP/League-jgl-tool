@@ -1,5 +1,6 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import './sideselect.css'
+import { CampSelectionContext } from '../../Contexts/CampSelectionContext'
 
 /**
  * Defines a sideselector component.
@@ -7,6 +8,8 @@ import './sideselect.css'
  */
 const SideSelect = () => {
   
+	const {setSideSelected} = useContext(CampSelectionContext)
+
 	/**
 	 * Verifies that the other checkbox is not unchecked before unchecking the checkbox.
 	 * @param {HTMLElement} target - The target element
@@ -23,8 +26,12 @@ const SideSelect = () => {
 				// if the other checkbox is unchecked, prevent unchecking the target checkbox
 				target.checked = true
 				return
+			} else {
+				setSideSelected(otherCheckbox.dataset.side)	
 			}
-		} 
+		} 	else if (isChecked && otherCheckbox.checked) {
+			setSideSelected('All')
+		}
 	}
       
       
@@ -41,6 +48,7 @@ const SideSelect = () => {
 					id="bluebox"
 					defaultChecked
 					onChange={(e) => sidesOnChange(e.target)}
+					data-side="Blue"
 				/>
 			</label>
 			<label className="sidebox-label" htmlFor="redbox" id="redlabel">
@@ -50,6 +58,7 @@ const SideSelect = () => {
 					id="redbox"
 					defaultChecked
 					onChange={(e) => sidesOnChange(e.target)}
+					data-side="Red"
 				/>
 			</label>
 		</>

@@ -9,7 +9,7 @@ export const CampSelectionContext = createContext()
  * @returns {JSX.Element} - The JSX element to be rendered.
  */
 const CampSelectionContextProvider = ({children}) => {
-
+	const [sideSelected, setSideSelected] = useState('All')
 	const [campNumber, setCampNumber] = useState(0)
 	const [selectedCamps, setSelectedCamps] = useState([])
 	const [totalExp, setTotalExp] = useState(0)
@@ -37,13 +37,14 @@ const CampSelectionContextProvider = ({children}) => {
 		}
 	}
 
-	// Listen for changes to selectedCamps and update the URL
 	useEffect(() => {
 		const selectedCampIds = selectedCamps.map((camp) => camp.id).join(':')
 		const encodedIds = window.btoa(selectedCampIds)
-		const newUrl = `/${encodedIds}`
+		const newUrl = `${window.location.origin}/${sideSelected}/${encodedIds}`
 		window.history.pushState(null, null, newUrl)
-	}, [selectedCamps])
+	}, [sideSelected, selectedCamps])
+	
+
 
  
 
@@ -108,7 +109,8 @@ const CampSelectionContextProvider = ({children}) => {
 				setCampNumber(updatedSelectedCamps.length)			
 			},
 			selectedCamps: selectedCamps,
-			setSelectedCamps: setSelectedCamps
+			setSelectedCamps: setSelectedCamps,
+			setSideSelected: setSideSelected
 		}}
 	>
 		{children}

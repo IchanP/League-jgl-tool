@@ -17,7 +17,7 @@ function App() {
 	 */
 	useEffect(() => {
 		setSelectedCamps([])
-		const encodedIds = pathname.substring(1) // skip the first character, which is "/"
+		const encodedIds = pathname.split('/').slice(2).join('/') // skip the first two parts of the pathname
 		if (encodedIds) {
 			const decodedIds = window.atob(encodedIds)
 			const campIds = decodedIds.split(':')

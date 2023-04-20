@@ -16,6 +16,7 @@
     max-height: 100%;
     transition: background-color 0.2s ease-in-out/*, box-shadow 1s ease-in-out*/;
     box-shadow: 0px 0px 8px 5px #276eb1a4;
+    cursor: pointer;
 }
 
 .reset:hover {

@@ -64,7 +64,7 @@ const SelectChamp = () => {
 		<div className="champcontainer">
 			<div className="champimages">
 				{selectedChampions.map((champ) => (
-					<img src={`./images/${champ}.png`} alt="" className="selectedChampImage" key={champ} onClick={imgClick} data-champion={champ}/>
+					<img src={`/images/${champ}.png`} alt="" className="selectedChampImage" key={champ} onClick={imgClick} data-champion={champ}/>
 				))}
 			</div>
 			<div className="searchbarcontainer">
@@ -75,7 +75,7 @@ const SelectChamp = () => {
 						<ul className="optul">
 							{matches.map(match => (
 								<li key={match} data-value={match} className='optli' onClick={(e) => { liClick(e.target) }}>
-									<img src={`./images/${match}.png`} alt={match} className="championImg" />
+									<img src={`/images/${match}.png`} alt={match} className="championImg" />
 									<div className="optli-text" data-value={match}>{match}</div>
 								</li>
 							))}
