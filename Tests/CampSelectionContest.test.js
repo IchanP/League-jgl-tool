@@ -5,6 +5,10 @@ import CampSelectionContextProvider from '../src/Contexts/CampSelectionContext'
 import { useContext } from 'react'
 import React from 'react'
 
+/**
+ * Defines a test component.
+ * @returns {JSX.Element} Returns a JSX test component.
+ */
 const TestComponent = () => {
 	const {campNumber, addToCampNumber, removeFromCampNumber, selectedCamps } = useContext(CampSelectionContext)
 	return (
