@@ -6,7 +6,7 @@ import SideBar from './Components/SideBar/SideBar'
 import SideBarContextProvider from './Contexts/SideBarContext'
 import ValuesDisplay from './Components/ValuesDisplay/ValuesDisplay'
 import CampSelectionContextProvider from './Contexts/CampSelectionContext'
-
+import Copied from './Components/Copied/Copied'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
@@ -15,6 +15,7 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 		</CampSelectionContextProvider>
 		<SideBarContextProvider>
 			<ValuesDisplay />
+			<Copied />
 			<SideBar />
 		</SideBarContextProvider>
 	</React.StrictMode>,
