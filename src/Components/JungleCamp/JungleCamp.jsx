@@ -20,7 +20,6 @@ const JungleCamp = ({ theCamp, goldValue, expValue }) => {
 	// Some camps use - dashes
 	const lastDashIndex = theCamp.lastIndexOf('-')
 	const campName = theCamp.substring(0, lastDashIndex)
-	console.log(campName)
 	useEffect(() => {
 		if (campSelected === true && selectedCamps[selectedCamps.length - 1]?.id === theCamp) {
 			setOrderInRoute(campNumber)

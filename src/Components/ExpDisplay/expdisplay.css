@@ -24,10 +24,10 @@
     background-color: rgba(39, 39, 46, 0.76);
     height: 9%;
     align-items: top;
-    gap: 20%; /* set gap between flex items */
+    gap: 5%; /* set gap between flex items */
 }
 
-.golddiv, .expbar {
+.golddiv, .expbar, .sideselect {
     margin-top: 1%;
     flex: 1 0 25%;
 
@@ -71,7 +71,7 @@
     height: 31%;
     border: 1px solid gold;
     background-color: rgba(255, 255, 255, 0.288);
-    transform: translate(-50%, 0);
+    transform: translate(0%);
     z-index: 500; /* Set a z-index for the parent element */
 }
 
