@@ -1,5 +1,5 @@
 import { createContext, useState } from 'react'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 export const CampSelectionContext = createContext()
 
@@ -36,6 +36,18 @@ const CampSelectionContextProvider = ({children}) => {
 			}
 		}
 	}
+
+	// Listen for changes to selectedCamps and update the URL
+	useEffect(() => {
+		const selectedCampIds = selectedCamps.map((camp) => camp.id).join(':')
+		const encodedIds = window.btoa(selectedCampIds)
+		const newUrl = `/${encodedIds}`
+		window.history.pushState(null, null, newUrl)
+	}, [selectedCamps])
+
+ 
+
+
 	/**
 	 * Reduces experience for the totalExp state.
 	 * @param {number} expvalue - The exp value to work with.
@@ -95,7 +107,8 @@ const CampSelectionContextProvider = ({children}) => {
 				setSelectedCamps(updatedSelectedCamps)
 				setCampNumber(updatedSelectedCamps.length)			
 			},
-			selectedCamps: selectedCamps
+			selectedCamps: selectedCamps,
+			setSelectedCamps: setSelectedCamps
 		}}
 	>
 		{children}
