@@ -3,22 +3,36 @@ import React from 'react'
 
 export const SideBarContext = createContext()
 
+/**
+ * A React component that provides context for the sidebar state.
+ * @param {React.PropsWithChildren} props - The component props.
+ * @returns {JSX.Element} - The JSX element to be rendered.
+ */
 const SideBarContextProvider = ({children}) => {
 
 	const [importActive, setImportActive] = useState(false)
 	const [valuesActive, setValuesActive] = useState(false)
 	const [valuesClicked, setValuesClicked] = useState(false)
     
+	/**
+	 * Shows the values element when mousing over.
+	 */
 	const valuesOnEnter = () => {
 		setValuesActive(true)
 	}
 
+	/**
+	 * Hides the values element when leaving mouseover.
+	 */
 	const valuesOnLeave = () => {
 		valuesClicked === false
 			? setValuesActive(false)
 			: {}
 	}
 
+	/**
+	 * Shows the values element when clicked, doesn't hide it if mouse leaves element when clicked.
+	 */
 	const valuesOnClick = () => {
 		if(valuesActive && valuesClicked) {
 			setValuesClicked(false)
@@ -34,9 +48,16 @@ const SideBarContextProvider = ({children}) => {
 		}
 	}
 
+	/**
+	 * Shows the import field when clicked.
+	 */
 	const importOnClick = () => {
 		setImportActive(true)
 	}
+
+	/**
+	 * Saves export string to clipboard when clicked.
+	 */
 	const exportOnClick = () => {
 		console.log('export on click')
 		// TODO add saved to clipboard

@@ -1,14 +1,17 @@
 // eslint-disable-next-line no-undef
 module.exports = {
-	'ignorePatterns': ['node_modules/*'],
 	'env': {
 		'browser': true,
 		'es2021': true,
 		'jest': true 
 	},
+	'globals': {
+		'JSX': 'readonly'
+	},
 	'extends': [
 		'eslint:recommended',
 		'plugin:react/recommended',
+		'plugin:jsdoc/recommended'
 	],
 	'overrides': [
 	],
@@ -17,7 +20,8 @@ module.exports = {
 		'sourceType': 'module'
 	},
 	'plugins': [
-		'react'
+		'react',
+		'jsdoc'
 	],
 	'rules': {
 		'indent': [
@@ -35,6 +39,19 @@ module.exports = {
 			'error',
 			'never'
 		],
-		'react/prop-types': 'off' 
+		'react/prop-types': 'off',
+		'jsdoc/require-jsdoc': [
+			'error',
+			{
+				'require': {
+					'FunctionDeclaration': false,
+					'MethodDefinition': true,
+					'ClassDeclaration': false,
+					'ArrowFunctionExpression': true,
+					'FunctionExpression': false
+				}
+			}
+		] 
 	}
 }
+
