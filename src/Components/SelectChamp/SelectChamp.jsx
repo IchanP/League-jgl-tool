@@ -69,6 +69,7 @@ const SelectChamp = () => {
 			</div>
 			<div className="searchbarcontainer">
 				<input type="text" value={input} onChange={handleInput} onFocus={handleInput} onBlur={handleBlur} className='champInput' placeholder='Search for your champion'/>
+				<button className="resetchamps" onClick={() => { setSelectedChampions([]) }}>X</button>
 				{matches.length > 0 && (
 					<div className="options">
 						<ul className="optul">
