@@ -10,14 +10,16 @@ import SelectChamp from './Components/SelectChamp/SelectChamp'
 function App() {
 
 	const pathname = window.location.pathname
-	const { setSelectedCamps, selectedCamps} = useContext(CampSelectionContext)
+	const { setSelectedCamps, selectedCamps, setSideSelected, sideSelected} = useContext(CampSelectionContext)
 
 	/**
 	 * Fetches and selects camps based on the encoded IDs present in the URL pathname.
 	 */
 	useEffect(() => {
 		setSelectedCamps([])
+		const pathnameParts = pathname.split('/')
 		const encodedIds = pathname.split('/').slice(2).join('/') // skip the first two parts of the pathname
+		const newSideSelected = pathnameParts[1]
 		if (encodedIds) {
 			const decodedIds = window.atob(encodedIds)
 			const campIds = decodedIds.split(':')
@@ -31,6 +33,13 @@ function App() {
 				}
 			}
 			clickCamps()
+		}
+		if (newSideSelected === 'Blue') {
+			const redBox = document.getElementById('redbox')
+			redBox.checked = false
+		} else if (newSideSelected === 'Red') {
+			const blueBox = document.getElementById('bluebox')
+			blueBox.checked = false
 		}
 	}, [])
   
@@ -48,8 +57,7 @@ function App() {
 		}
 		clickSelectedCamps()
 	}, [selectedCamps])
-  
- 
+
 	return (
 		<div className="App">
 			<h1 className="mainTitle">Jingle Gap</h1>
