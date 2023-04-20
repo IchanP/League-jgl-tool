@@ -6,7 +6,6 @@ import './sideselect.css'
  * @returns {HTMLElement} - Returns a sideselector element
  */
 const SideSelect = () => {
-	const [selected, setSelected] = useState(['bluebox', 'redbox'])
   
 	/**
 	 * Verifies that the other checkbox is not unchecked before unchecking the checkbox.
@@ -25,12 +24,7 @@ const SideSelect = () => {
 				target.checked = true
 				return
 			}
-			// if both checkboxes are checked, update the selected state with both ids
-			setSelected([id, otherId])
-		} else {
-			// if target checkbox is unchecked, update the selected state with the other id only
-			setSelected([otherId])
-		}
+		} 
 	}
       
       
