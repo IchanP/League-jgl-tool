@@ -10,7 +10,7 @@ import { CampSelectionContext } from '../../Contexts/CampSelectionContext'
  */
 const SelectChamp = () => {
 
-    const {selectedChampions, setSelectedChampions} = useContext(CampSelectionContext)
+	const {selectedChampions, setSelectedChampions} = useContext(CampSelectionContext)
 	const [input, setInput] = useState('')
 	const [matches, setMatches] = useState([])
 	
@@ -56,16 +56,16 @@ const SelectChamp = () => {
 	 * Resets the shown champions.
 	 */
 	const handleBlur = () => {
-		setTimeout(() => {
+		/*setTimeout(() => {
 			setMatches([])
-		}, 100)
+		}, 100) */
 	}
 
 	return ( 
 		<div className="champcontainer">
 			<div className="champimages">
 				{console.log(selectedChampions)}
-			{selectedChampions.length > 0 && selectedChampions.map((champ) => (
+				{selectedChampions.length > 0 && selectedChampions.map((champ) => (
 					<img src={`/images/${champ}.png`} alt="" className="selectedChampImage" key={champ} onClick={imgClick} data-champion={champ}/>
 				))} 
 			</div>
@@ -77,7 +77,7 @@ const SelectChamp = () => {
 						<ul className="optul">
 							{matches.map(match => (
 								<li key={match} data-value={match} className='optli' onClick={(e) => { liClick(e.target) }}>
-									<img src={`/images/${match}.png`} alt={match} className="championImg" />
+									<img src={`/images/${match}.png`} alt={match} className="championImg" data-value={match}/>
 									<div className="optli-text" data-value={match}>{match}</div>
 								</li>
 							))}
