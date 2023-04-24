@@ -11,3 +11,7 @@
     background-color: red;
     z-index: 2;
   }
+
+  .footerText {
+    font-size: 0.8rem;
+  }
