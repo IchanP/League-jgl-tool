@@ -52,7 +52,7 @@ const JungleCamp = ({ theCamp, goldValue, expValue }) => {
 				}
 			}}>
 				{campSelected && <p className="campOrder" data-testid={theCamp}>{orderInRoute}</p>}
-				<img src={`./images/${campName}.png`} alt={campName} className="campImage" id={campName + 'img'}></img> 
+				<img src={`/images/${campName}.png`} alt={campName} className="campImage" id={campName + 'img'}></img> 
 			</button>
 		</>
 	)

@@ -1,7 +1,8 @@
 import './selectchamp.css'
-import React from 'react'
+import React, { useContext } from 'react'
 import { useState } from 'react'
 import { championNames } from '../../Data/Arrays'
+import { CampSelectionContext } from '../../Contexts/CampSelectionContext'
 
 /**
  * Defines a champion selector element.
@@ -9,10 +10,10 @@ import { championNames } from '../../Data/Arrays'
  */
 const SelectChamp = () => {
 
-      
+	const {selectedChampions, setSelectedChampions} = useContext(CampSelectionContext)
 	const [input, setInput] = useState('')
 	const [matches, setMatches] = useState([])
-	const [selectedChampions, setSelectedChampions] = useState([])
+	
 
 	/**
 	 * Handles the event, displaying the matching champions.
@@ -55,17 +56,18 @@ const SelectChamp = () => {
 	 * Resets the shown champions.
 	 */
 	const handleBlur = () => {
-		setTimeout(() => {
+		/*setTimeout(() => {
 			setMatches([])
-		}, 100)
+		}, 100) */
 	}
 
 	return ( 
 		<div className="champcontainer">
 			<div className="champimages">
-				{selectedChampions.map((champ) => (
-					<img src={`./images/${champ}.png`} alt="" className="selectedChampImage" key={champ} onClick={imgClick} data-champion={champ}/>
-				))}
+				{console.log(selectedChampions)}
+				{selectedChampions.length > 0 && selectedChampions.map((champ) => (
+					<img src={`/images/${champ}.png`} alt="" className="selectedChampImage" key={champ} onClick={imgClick} data-champion={champ}/>
+				))} 
 			</div>
 			<div className="searchbarcontainer">
 				<input type="text" value={input} onChange={handleInput} onFocus={handleInput} onBlur={handleBlur} className='champInput' placeholder='Search for your champion'/>
@@ -75,7 +77,7 @@ const SelectChamp = () => {
 						<ul className="optul">
 							{matches.map(match => (
 								<li key={match} data-value={match} className='optli' onClick={(e) => { liClick(e.target) }}>
-									<img src={`./images/${match}.png`} alt={match} className="championImg" />
+									<img src={`/images/${match}.png`} alt={match} className="championImg" data-value={match}/>
 									<div className="optli-text" data-value={match}>{match}</div>
 								</li>
 							))}

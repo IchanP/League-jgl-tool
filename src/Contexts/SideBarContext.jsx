@@ -13,7 +13,8 @@ const SideBarContextProvider = ({children}) => {
 	const [importActive, setImportActive] = useState(false)
 	const [valuesActive, setValuesActive] = useState(false)
 	const [valuesClicked, setValuesClicked] = useState(false)
-    
+    const [copiedActive, setCopiedActive] = useState(false)
+
 	/**
 	 * Shows the values element when mousing over.
 	 */
@@ -58,10 +59,19 @@ const SideBarContextProvider = ({children}) => {
 	/**
 	 * Saves export string to clipboard when clicked.
 	 */
-	const exportOnClick = () => {
-		console.log('export on click')
-		// TODO add saved to clipboard
-	}
+	const exportOnClick = async () => {
+		let url = window.location.href
+		try {
+			await navigator.clipboard.writeText(url)
+			setCopiedActive(true)
+			setTimeout(() => {
+				setCopiedActive(false)
+			}, 2000)
+			} catch (err) {
+				console.log('fail')
+			}
+		}
+	
 
 	return <SideBarContext.Provider
 		value={{
@@ -72,6 +82,7 @@ const SideBarContextProvider = ({children}) => {
 			valuesOnClick: valuesOnClick,
 			importOnClick: importOnClick,
 			exportOnClick: exportOnClick,
+			copiedActive: copiedActive
 		}}
 	>
 		{children}
