@@ -56,9 +56,9 @@ const SelectChamp = () => {
 	 * Resets the shown champions.
 	 */
 	const handleBlur = () => {
-		/*setTimeout(() => {
+		setTimeout(() => {
 			setMatches([])
-		}, 100) */
+		}, 400) 
 	}
 
 	return ( 
