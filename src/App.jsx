@@ -10,6 +10,7 @@ import ValuesDisplay from './Components/ValuesDisplay/ValuesDisplay'
 import Copied from './Components/Copied/Copied'
 import SideBar from './Components/SideBar/SideBar'
 import JsonImportDisplay from './Components/JsonImportDisplay/JsonImportDisplay'
+import UrlImportDisplay from './Components/urlImportDisplay/urlImportDisplay'
 
 function App() {
 
@@ -67,6 +68,7 @@ function App() {
 				<Copied />
 				<SideBar />
 				<JsonImportDisplay />
+				<UrlImportDisplay />
 				<CampSelectionContext.Consumer>
 					{() => { 
 						return <>

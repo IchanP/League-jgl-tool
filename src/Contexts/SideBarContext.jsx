@@ -17,7 +17,7 @@ const SideBarContextProvider = ({children}) => {
 	const [exportOptionsActive, setExportOptionsActive] = useState(false)
 	const [copiedActive, setCopiedActive] = useState(false)
 	const [newImport, setNewImport] = useState()
-
+	const [urlImportActive, setUrlImportActive] = useState(false)
 	/**
 	 * Shows the values element when mousing over.
 	 */
@@ -112,6 +112,14 @@ const SideBarContextProvider = ({children}) => {
 		setJsonImportActive(false)
 	}
 
+	/**
+	 * Imports route from url.
+	 * @param {string} value - The value from text field.
+	 */
+	const createUrlImport = (value) => {
+		console.log('yippie')
+	}
+
 	return <SideBarContext.Provider
 		value={{
 			importActive: importActive,
@@ -130,7 +138,10 @@ const SideBarContextProvider = ({children}) => {
 			jsonImportActive: jsonImportActive,
 			setJsonImportActive: setJsonImportActive,
 			createJsonImport: createJsonImport,
-			newImport: newImport
+			newImport: newImport,
+			urlImportActive: urlImportActive,
+			setUrlImportActive: setUrlImportActive,
+			createUrlImport: createUrlImport
 		}}
 	>
 		{children}

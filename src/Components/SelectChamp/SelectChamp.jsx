@@ -14,7 +14,7 @@ const SelectChamp = () => {
 	const {selectedChampions, setSelectedChampions} = useContext(CampSelectionContext)
 	const [input, setInput] = useState('')
 	const [matches, setMatches] = useState([])
-	//const {newImport} = useContext(SideBarContext)
+	const {newImport} = useContext(SideBarContext)
 
 	/**
 	 * Handles the event, displaying the matching champions.
@@ -32,18 +32,20 @@ const SelectChamp = () => {
 	}
 
   
-/*	useEffect(() => {
-		if(newImport?.champions.includes(':')) {
-			const newArray = newImport.champions.split(':')
-			setSelectedChampions(newArray)
-		} else if (newImport?.champions)  {
-			const newArray = []
-			newArray[0] = newImport.champions
-			setSelectedChampions(newArray)
-		} else {
-			setSelectedChampions([])
+	useEffect(() => {
+		if (newImport) {
+			if(newImport?.champions.includes(':')) {
+				const newArray = newImport.champions.split(':')
+				setSelectedChampions(newArray)
+			} else if (newImport?.champions)  {
+				const newArray = []
+				newArray[0] = newImport.champions
+				setSelectedChampions(newArray)
+			} else {
+				setSelectedChampions([])
+			}
 		}
-	},[newImport]) */
+	},[newImport]) 
 
 
 	/**

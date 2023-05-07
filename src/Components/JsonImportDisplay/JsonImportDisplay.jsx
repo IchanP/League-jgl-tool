@@ -4,7 +4,7 @@ import { SideBarContext } from '../../Contexts/SideBarContext'
 import React from 'react'
 
 /**
- * Defines the display for when user presses import button.
+ * Defines the display for when user presses json import button.
  * @returns {HTMLElement} - Returns the display.
  */
 const JsonImportDisplay = () => {

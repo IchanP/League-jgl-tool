@@ -63,7 +63,9 @@ const SideSelect = () => {
 	}
 
 	useEffect(() => {
-		setSideSelected(newImport?.side || 'All')
+		if (newImport) {
+			setSideSelected(newImport?.side || 'All')
+		}
 	},[newImport])
       
 	useEffect(() => {
