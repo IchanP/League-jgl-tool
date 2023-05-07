@@ -1,6 +1,5 @@
 import React from 'react'
 import { render, fireEvent, act } from '@testing-library/react'
-import Map from '../src/Components/Map/Map'
 import '@testing-library/jest-dom'
 import CampSelectionContextProvider from '../src/Contexts/CampSelectionContext.jsx'
 import App from '../src/App'
