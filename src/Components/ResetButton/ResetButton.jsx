@@ -12,7 +12,7 @@ const ResetButton = () => {
 	const { resetAll } = useContext(CampSelectionContext)
 
 	return ( 
-		<button data-testid="resetButtonMap" className="reset" onClick={resetAll}/>
+		<button data-testid="resetButtonMap" id="resetAllCamps" className="reset" onClick={resetAll}/>
 	)
 }
  

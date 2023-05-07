@@ -17,10 +17,8 @@ const Map = () => {
 	const {newImport} = useContext(SideBarContext)
 
 	useEffect(() => {
-		console.log(newImport?.route)
 		if (newImport?.route) {
 			const string = atob(newImport.route)
-			console.log(string)
 			let newArray = []
 			newArray = string.split(':')
 			clickCamps(newArray)
@@ -32,8 +30,13 @@ const Map = () => {
 	 * @param {NodeList} array - A list of html elements.
 	 */
 	const clickCamps = async (array) => {
-		const reset = document.getElementById('resetAllCamps')
-		await reset.click()
+		const allCamps = document.getElementsByClassName('buttonCamp')
+		console.log(allCamps)
+		for(const elements of allCamps) {
+			if(elements.dataset.iscampselected === 'true') {
+				await elements.click()
+			}
+		}
 		for(const element of array) {
 			const button = document.getElementById(element)
 			await button.click()

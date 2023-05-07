@@ -1,8 +1,9 @@
 import './selectchamp.css'
 import React, { useContext } from 'react'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { championNames } from '../../Data/Arrays'
 import { CampSelectionContext } from '../../Contexts/CampSelectionContext'
+import { SideBarContext } from '../../Contexts/SideBarContext'
 
 /**
  * Defines a champion selector element.
@@ -13,7 +14,7 @@ const SelectChamp = () => {
 	const {selectedChampions, setSelectedChampions} = useContext(CampSelectionContext)
 	const [input, setInput] = useState('')
 	const [matches, setMatches] = useState([])
-	
+	//const {newImport} = useContext(SideBarContext)
 
 	/**
 	 * Handles the event, displaying the matching champions.
@@ -31,6 +32,20 @@ const SelectChamp = () => {
 	}
 
   
+/*	useEffect(() => {
+		if(newImport?.champions.includes(':')) {
+			const newArray = newImport.champions.split(':')
+			setSelectedChampions(newArray)
+		} else if (newImport?.champions)  {
+			const newArray = []
+			newArray[0] = newImport.champions
+			setSelectedChampions(newArray)
+		} else {
+			setSelectedChampions([])
+		}
+	},[newImport]) */
+
+
 	/**
 	 * Removes the selected champion from the selectedChamps array.
 	 * @param {Event} event - The event that triggered the function.
