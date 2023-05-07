@@ -10,13 +10,13 @@ import Copied from './Components/Copied/Copied'
 
 ReactDOM.createRoot(document.getElementById('root')).render(
 	<React.StrictMode>
-		<CampSelectionContextProvider>
-			<App />
-		</CampSelectionContextProvider>
 		<SideBarContextProvider>
-			<ValuesDisplay />
-			<Copied />
-			<SideBar />
+			<CampSelectionContextProvider>
+				<App />
+				<ValuesDisplay />
+				<Copied />
+				<SideBar />
+			</CampSelectionContextProvider>
 		</SideBarContextProvider>
 	</React.StrictMode>,
 )

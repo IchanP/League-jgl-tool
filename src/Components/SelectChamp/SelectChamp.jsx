@@ -64,7 +64,6 @@ const SelectChamp = () => {
 	return ( 
 		<div className="champcontainer">
 			<div className="champimages">
-				{console.log(selectedChampions)}
 				{selectedChampions.length > 0 && selectedChampions.map((champ) => (
 					<img src={`/images/${champ}.png`} alt="" className="selectedChampImage" key={champ} onClick={imgClick} data-champion={champ}/>
 				))} 

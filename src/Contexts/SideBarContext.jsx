@@ -13,7 +13,8 @@ const SideBarContextProvider = ({children}) => {
 	const [importActive, setImportActive] = useState(false)
 	const [valuesActive, setValuesActive] = useState(false)
 	const [valuesClicked, setValuesClicked] = useState(false)
-    const [copiedActive, setCopiedActive] = useState(false)
+	const [exportOptionsActive, setExportOptionsActive] = useState(false)
+	const [copiedActive, setCopiedActive] = useState(false)
 
 	/**
 	 * Shows the values element when mousing over.
@@ -67,10 +68,24 @@ const SideBarContextProvider = ({children}) => {
 			setTimeout(() => {
 				setCopiedActive(false)
 			}, 2000)
-			} catch (err) {
-				console.log('fail')
-			}
+		} catch (err) {
+			console.log('fail')
 		}
+	}
+
+	/**
+	 * Shows the export options when function is triggered.
+	 */
+	const exportOnHover =  () => {
+		setExportOptionsActive(true)
+	}
+	
+	/**
+	 * Hides the export options when function is triggered.
+	 */
+	const exportOnLeave =  () => {
+		setExportOptionsActive(false)
+	}
 	
 
 	return <SideBarContext.Provider
@@ -82,7 +97,11 @@ const SideBarContextProvider = ({children}) => {
 			valuesOnClick: valuesOnClick,
 			importOnClick: importOnClick,
 			exportOnClick: exportOnClick,
-			copiedActive: copiedActive
+			copiedActive: copiedActive,
+			setCopiedActive: setCopiedActive,
+			exportOnHover: exportOnHover,
+			exportOnLeave: exportOnLeave,
+			exportOptionsActive: exportOptionsActive,
 		}}
 	>
 		{children}
