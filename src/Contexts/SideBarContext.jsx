@@ -100,11 +100,16 @@ const SideBarContextProvider = ({children}) => {
 	 * @param {string} value - The value from the text area.
 	 */
 	const createJsonImport = (value) => {
-		const data = JSON.parse(value)
-		console.log(data)
-		let newUrl = `${window.location.origin}/${data.side}/${data.route}/${data.champions}`
-		window.history.pushState(null, null, newUrl)
-		setNewImport(data)
+		try {
+			const data = JSON.parse(value)
+			console.log(data)
+			setNewImport(data)
+		} catch (error) {
+			console.error(error)
+		}
+		//	let newUrl = `${window.location.origin}/${data.side}/${data.route}/${data.champions}`
+		//	window.history.pushState(null, null, newUrl)
+		setJsonImportActive(false)
 	}
 
 	return <SideBarContext.Provider
