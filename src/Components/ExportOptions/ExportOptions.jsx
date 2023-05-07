@@ -1,7 +1,7 @@
 import { SideBarContext } from '../../Contexts/SideBarContext'
 import Button from '../Button/Button'
 import './exportoptions.css'
-import { useContext, useEffect } from 'react'
+import { useContext } from 'react'
 import React from 'react'
 /**
  * Defines the options for exporting.

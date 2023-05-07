@@ -51,10 +51,16 @@ const SideBarContextProvider = ({children}) => {
 	}
 
 	/**
-	 * Shows the import field when clicked.
+	 * Shows the import options when clicked.
 	 */
-	const importOnClick = () => {
+	const importOnHover = () => {
 		setImportActive(true)
+	}
+	/**
+	 * Hides the import options when mouse leaves.
+	 */
+	const importOnLeave = () => {
+		setImportActive(false)
 	}
 
 	/**
@@ -95,7 +101,8 @@ const SideBarContextProvider = ({children}) => {
 			valuesOnEnter: valuesOnEnter,
 			valuesOnLeave: valuesOnLeave,
 			valuesOnClick: valuesOnClick,
-			importOnClick: importOnClick,
+			importOnHover: importOnHover,
+			importOnLeave: importOnLeave,
 			exportOnClick: exportOnClick,
 			copiedActive: copiedActive,
 			setCopiedActive: setCopiedActive,

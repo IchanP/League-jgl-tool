@@ -4,6 +4,7 @@ import Button from '../Button/Button'
 import  { SideBarContext } from '../../Contexts/SideBarContext'
 import ExportOptions from '../ExportOptions/ExportOptions'
 import { CampSelectionContext } from '../../Contexts/CampSelectionContext'
+import ImportOptions from '../ImportOptions/ImportOptions'
 
 /**
  * Defines a JSX sidebar element.
@@ -11,7 +12,7 @@ import { CampSelectionContext } from '../../Contexts/CampSelectionContext'
  */
 const SideBar = () => {
 	const { exportObject, selectedChampions } = useContext(CampSelectionContext)
-	const {valuesOnClick, importOnClick, valuesOnEnter, valuesOnLeave, exportOnClick, setCopiedActive, exportOnHover, exportOnLeave} = useContext(SideBarContext)
+	const {valuesOnClick, importOnHover, valuesOnEnter, valuesOnLeave, exportOnClick, setCopiedActive, exportOnHover, exportOnLeave, importOnLeave} = useContext(SideBarContext)
 
 	return ( 
 		<>
@@ -20,7 +21,10 @@ const SideBar = () => {
 					{() => {
 						return <>
 							<Button Text="Values" onClick={valuesOnClick} onMouseEnter={valuesOnEnter} onMouseLeave={valuesOnLeave}/>
-							<Button Text="Import" onClick={importOnClick}/>
+							<Button Text="Import" onMouseEnter={importOnHover} onMouseLeave={importOnLeave}/>
+							<ImportOptions 
+								onMouseEnter={importOnHover} onMouseLeave={importOnLeave}
+							/>
 							<Button Text="Export" onMouseLeave={exportOnLeave} onMouseEnter={exportOnHover} testid="exportButton"/>							
 							<ExportOptions onMouseEnter={exportOnHover} onMouseLeave={exportOnLeave} 
 								jsonClick={async () => {

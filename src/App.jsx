@@ -9,6 +9,7 @@ import SelectChamp from './Components/SelectChamp/SelectChamp'
 import ValuesDisplay from './Components/ValuesDisplay/ValuesDisplay'
 import Copied from './Components/Copied/Copied'
 import SideBar from './Components/SideBar/SideBar'
+import ImportDisplay from './Components/ImportDisplay/ImportDisplay'
 
 function App() {
 
@@ -65,6 +66,7 @@ function App() {
 				<ValuesDisplay />
 				<Copied />
 				<SideBar />
+				<ImportDisplay />
 				<CampSelectionContext.Consumer>
 					{() => { 
 						return <>
