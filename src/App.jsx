@@ -12,6 +12,7 @@ import SideBar from './Components/SideBar/SideBar'
 import JsonImportDisplay from './Components/JsonImportDisplay/JsonImportDisplay'
 import UrlImportDisplay from './Components/UrlImportDisplay/UrlImportDisplay'
 
+// App component
 function App() {
 
 	const { setSelectedCamps, selectedCamps} = useContext(CampSelectionContext)
