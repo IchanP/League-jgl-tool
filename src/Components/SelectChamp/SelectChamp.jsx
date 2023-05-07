@@ -75,7 +75,7 @@ const SelectChamp = () => {
 	const handleBlur = () => {
 		setTimeout(() => {
 			setMatches([])
-		}, 400) 
+		}, 200) 
 	}
 
 	return ( 
