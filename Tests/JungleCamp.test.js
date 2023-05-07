@@ -4,12 +4,15 @@ import Map from '../src/Components/Map/Map'
 import '@testing-library/jest-dom'
 import CampSelectionContextProvider from '../src/Contexts/CampSelectionContext.jsx'
 import JungleCamp from '../src/Components/JungleCamp/JungleCamp'
+import SideBarContextProvider from '../src/Contexts/SideBarContext'
 
 describe('JungleCamp component', () => {
 	it('should set campSelected to true when button with id "gromp-blue" is clicked once', async () => {
 		render(
 			<CampSelectionContextProvider>
-				<Map />
+				<SideBarContextProvider>
+					<Map />
+				</SideBarContextProvider>
 			</CampSelectionContextProvider>
 		)
 		const grompBlueButton = document.getElementById('Gromp-Blue')
@@ -31,7 +34,9 @@ describe('JungleCamp component', () => {
 	it('should set campSelected to false when button with id "gromp-blue" is clicked twice', async () => {
 		render(
 			<CampSelectionContextProvider>
-				<Map />
+				<SideBarContextProvider>
+					<Map />
+				</SideBarContextProvider>
 			</CampSelectionContextProvider>
 		)
 		const grompBlueButton = document.getElementById('Gromp-Blue')
@@ -58,7 +63,9 @@ describe('JungleCamp component', () => {
 	it('Should be able to select all camps', async () => {
 		render(
 			<CampSelectionContextProvider>
-				<Map />
+				<SideBarContextProvider>
+					<Map />
+				</SideBarContextProvider>
 			</CampSelectionContextProvider>
 		)
 		const grompBlueButton = document.getElementById('Gromp-Blue')

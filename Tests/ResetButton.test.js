@@ -4,12 +4,15 @@ import Map from '../src/Components/Map/Map'
 import '@testing-library/jest-dom'
 import CampSelectionContextProvider from '../src/Contexts/CampSelectionContext.jsx'
 import App from '../src/App'
+import SideBarContextProvider from '../src/Contexts/SideBarContext'
 
 describe('Reset Button component', () => {
 	it('Should reset all order of camps when pressed', async () => {
 		const {getByTestId} = render(
 			<CampSelectionContextProvider>
-				<Map />
+				<SideBarContextProvider>
+					<App />
+				</SideBarContextProvider>
 			</CampSelectionContextProvider>
 		)
 		const allButtons = document.getElementsByClassName('buttonCamp')
@@ -39,7 +42,9 @@ describe('Reset Button component', () => {
 	it('Should reset the EXP display values when pressed', async () => {
 		const {getByTestId} = render(
 			<CampSelectionContextProvider>
-				<App />
+				<SideBarContextProvider>
+					<App />
+				</SideBarContextProvider>
 			</CampSelectionContextProvider>
 		)
 
@@ -70,7 +75,9 @@ describe('Reset Button component', () => {
 	it('Should reset the total exp and level when pressed', async () => {
 		const {getByTestId} = render(
 			<CampSelectionContextProvider>
-				<App />
+				<SideBarContextProvider>
+					<App />
+				</SideBarContextProvider>
 			</CampSelectionContextProvider>
 		)
 
@@ -104,7 +111,9 @@ describe('Reset Button Component', () => {
 
 		const {getByTestId} = render(
 			<CampSelectionContextProvider>
-				<App />
+				<SideBarContextProvider>
+					<App />
+				</SideBarContextProvider>
 			</CampSelectionContextProvider>
 		)
 
