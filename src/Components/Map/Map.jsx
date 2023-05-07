@@ -45,7 +45,7 @@ const Map = () => {
 	return (
 		<CampSelectionContext.Consumer>
 			{() => (
-				<div className="mapwrap">
+				<div className="mapwrap" data-inspect='gay if read'>
 					<ResetButton />
 					<img src={map} alt="gamemap" className="mapholder" />
 					{camps.map((camp) => (
