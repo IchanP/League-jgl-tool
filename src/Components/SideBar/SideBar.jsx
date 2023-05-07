@@ -10,8 +10,8 @@ import { CampSelectionContext } from '../../Contexts/CampSelectionContext'
  * @returns {HTMLElement} Returns a sidebar element.
  */
 const SideBar = () => {
-	const {exportUrl, exportObject} = useContext(CampSelectionContext)
-	const {valuesOnClick, importOnClick, valuesOnEnter, valuesOnLeave, setCopiedActive, exportOnHover, exportOnLeave} = useContext(SideBarContext)
+	const { exportObject, selectedChampions } = useContext(CampSelectionContext)
+	const {valuesOnClick, importOnClick, valuesOnEnter, valuesOnLeave, exportOnClick, setCopiedActive, exportOnHover, exportOnLeave} = useContext(SideBarContext)
 
 	return ( 
 		<>
@@ -24,6 +24,7 @@ const SideBar = () => {
 							<Button Text="Export" onMouseLeave={exportOnLeave} onMouseEnter={exportOnHover} testid="exportButton"/>							
 							<ExportOptions onMouseEnter={exportOnHover} onMouseLeave={exportOnLeave} 
 								jsonClick={async () => {
+									console.log(selectedChampions)
 									try {
 										await navigator.clipboard.writeText(JSON.stringify(exportObject))
 										setCopiedActive(true)
@@ -34,17 +35,7 @@ const SideBar = () => {
 										console.log('fail')
 									}
 								}} 
-								urlClick={async () => {
-									try {
-										await navigator.clipboard.writeText(exportUrl)
-										setCopiedActive(true)
-										setTimeout(() => {
-											setCopiedActive(false)
-										}, 2000)
-									} catch (err) {
-										console.log('fail')
-									} 
-								}}/>
+								urlClick={exportOnClick}/>
 						</>
 					}}	
 				</SideBarContext.Consumer>

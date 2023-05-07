@@ -26,6 +26,7 @@ const CampSelectionContextProvider = ({children}) => {
 	const [totalGold, setTotalGold] = useState(0)
 	const [level, setLevel] = useState(1)
 	const totalRequired = [ 280, 380, 480, 580, 680, 780, 880, 980, 1080, 1180, 1280, 1380, 1480, 1580, 1680, 1780, 1880]
+	const [exportObject, setExportObject] = useState()
 
 	/**
 	 * Adds experience to the totalExp state.
@@ -51,6 +52,8 @@ const CampSelectionContextProvider = ({children}) => {
 		const selectedCampIds = selectedCamps.map((camp) => camp.id).join(':')
 		const selectedChamps = selectedChampions.map((champ) => champ).join(':')
 		const encodedIds = window.btoa(selectedCampIds)
+		setExportObject({side: sideSelected, route: encodedIds, champions: selectedChamps })
+		console.log('when does this trigger?')
 		let newUrl = `${window.location.origin}/${sideSelected}/${encodedIds}/`
 		if(selectedChamps) {
 			newUrl += `${selectedChamps}`
@@ -122,7 +125,8 @@ const CampSelectionContextProvider = ({children}) => {
 			setSideSelected: setSideSelected,
 			sideSelected: sideSelected,
 			selectedChampions: selectedChampions,
-			setSelectedChampions: setSelectedChampions
+			setSelectedChampions: setSelectedChampions,
+			exportObject: exportObject
 		}}
 	>
 		{children}

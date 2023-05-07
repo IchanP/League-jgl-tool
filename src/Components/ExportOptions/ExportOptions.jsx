@@ -16,10 +16,6 @@ const ExportOptions = ({onMouseEnter, onMouseLeave, jsonClick, urlClick}) => {
 
 	const  {exportOptionsActive} = useContext(SideBarContext)
 
-	useEffect(() => {
-		console.log(exportOptionsActive)
-	},[exportOptionsActive])
-
 	return ( 
 		<div className="exportoptionscontainer" data-isactive={exportOptionsActive} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
 			<Button 

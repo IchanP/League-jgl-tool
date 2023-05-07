@@ -6,6 +6,9 @@ import CampSelectionContextProvider from './Contexts/CampSelectionContext'
 import { CampSelectionContext } from './Contexts/CampSelectionContext'
 import ExpDisplay from './Components/ExpDisplay/ExpDisplay'
 import SelectChamp from './Components/SelectChamp/SelectChamp'
+import ValuesDisplay from './Components/ValuesDisplay/ValuesDisplay'
+import Copied from './Components/Copied/Copied'
+import SideBar from './Components/SideBar/SideBar'
 
 function App() {
 
@@ -58,7 +61,10 @@ function App() {
 	return (
 		<div className="App">
 			<h1 className="mainTitle">Jingle Gap</h1>
-			<CampSelectionContextProvider>
+			<CampSelectionContextProvider>		
+				<ValuesDisplay />
+				<Copied />
+				<SideBar />
 				<CampSelectionContext.Consumer>
 					{() => { 
 						return <>
