@@ -12,7 +12,7 @@ import ImportOptions from '../ImportOptions/ImportOptions'
  */
 const SideBar = () => {
 	const { exportObject, selectedChampions } = useContext(CampSelectionContext)
-	const {valuesOnClick, importOnHover, valuesOnEnter, valuesOnLeave, exportOnClick, setCopiedActive, exportOnHover, exportOnLeave, importOnLeave} = useContext(SideBarContext)
+	const {valuesOnClick, importOnHover, valuesOnEnter, valuesOnLeave, exportOnClick, setCopiedActive, exportOnHover, exportOnLeave, importOnLeave, setJsonImportActive} = useContext(SideBarContext)
 
 	return ( 
 		<>
@@ -24,6 +24,9 @@ const SideBar = () => {
 							<Button Text="Import" onMouseEnter={importOnHover} onMouseLeave={importOnLeave}/>
 							<ImportOptions 
 								onMouseEnter={importOnHover} onMouseLeave={importOnLeave}
+								jsonClick={() => {
+									setJsonImportActive(true)
+								}}
 							/>
 							<Button Text="Export" onMouseLeave={exportOnLeave} onMouseEnter={exportOnHover} testid="exportButton"/>							
 							<ExportOptions onMouseEnter={exportOnHover} onMouseLeave={exportOnLeave} 

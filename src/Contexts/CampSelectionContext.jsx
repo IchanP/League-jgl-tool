@@ -53,14 +53,13 @@ const CampSelectionContextProvider = ({children}) => {
 		const selectedChamps = selectedChampions.map((champ) => champ).join(':')
 		const encodedIds = window.btoa(selectedCampIds)
 		setExportObject({side: sideSelected, route: encodedIds, champions: selectedChamps })
-		console.log('when does this trigger?')
 		let newUrl = `${window.location.origin}/${sideSelected}/${encodedIds}/`
 		if(selectedChamps) {
 			newUrl += `${selectedChamps}`
 		}
 		window.history.pushState(null, null, newUrl)
 	}, [sideSelected, selectedCamps, selectedChampions])	
-
+	
 	/**
 	 * Reduces experience for the totalExp state.
 	 * @param {number} expvalue - The exp value to work with.

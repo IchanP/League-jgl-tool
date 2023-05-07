@@ -11,10 +11,12 @@ export const SideBarContext = createContext()
 const SideBarContextProvider = ({children}) => {
 
 	const [importActive, setImportActive] = useState(false)
+	const [jsonImportActive, setJsonImportActive] = useState(false)
 	const [valuesActive, setValuesActive] = useState(false)
 	const [valuesClicked, setValuesClicked] = useState(false)
 	const [exportOptionsActive, setExportOptionsActive] = useState(false)
 	const [copiedActive, setCopiedActive] = useState(false)
+	const [newImport, setNewImport] = useState()
 
 	/**
 	 * Shows the values element when mousing over.
@@ -93,6 +95,17 @@ const SideBarContextProvider = ({children}) => {
 		setExportOptionsActive(false)
 	}
 	
+	/**
+	 * Imports json data
+	 * @param {string} value - The value from the text area.
+	 */
+	const createJsonImport = (value) => {
+		const data = JSON.parse(value)
+		console.log(data)
+		let newUrl = `${window.location.origin}/${data.side}/${data.route}/${data.champions}`
+		window.history.pushState(null, null, newUrl)
+		setNewImport(data)
+	}
 
 	return <SideBarContext.Provider
 		value={{
@@ -109,6 +122,10 @@ const SideBarContextProvider = ({children}) => {
 			exportOnHover: exportOnHover,
 			exportOnLeave: exportOnLeave,
 			exportOptionsActive: exportOptionsActive,
+			jsonImportActive: jsonImportActive,
+			setJsonImportActive: setJsonImportActive,
+			createJsonImport: createJsonImport,
+			newImport: newImport
 		}}
 	>
 		{children}

@@ -6,7 +6,7 @@
     width: 100vw;
     height: 100vh;
     background-color: rgba(240, 248, 255, 0.336);
-    z-index: 5000;
+    z-index: 6000;
 }
 
 .setimport {
@@ -28,9 +28,13 @@
     transform: translateX(-50%);
     border: 1px solid rgba(165, 157, 157, 0.342);
     width: 20%;
-    height: 5%;
+    height: auto;
+    padding-bottom: 0.3rem;
     background-color: rgba(18, 78, 45, 0.678);
     color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     cursor: pointer;
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     font-size: 1.2rem;
@@ -45,8 +49,8 @@
     background-color: red;
     border: 2px solid rgba(0, 0, 0);
     font-weight: bold;
-    width: 4%;
-    height: 4%;
+    width: 3%;
+    height: 3%;
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     border-radius: 50%;
     color: white;
