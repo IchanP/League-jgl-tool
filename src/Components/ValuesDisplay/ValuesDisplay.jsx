@@ -10,11 +10,11 @@ import { campValues } from '../../Data/Arrays'
  */
 const ValuesDisplay = () => {
 	
-	const { valuesActive } = useContext(SideBarContext)
+	const { valuesActive, valuesOnEnter, valuesOnLeave } = useContext(SideBarContext)
 
 	return ( 
 		<>
-			<div className="valuedisplay" data-isactive={valuesActive}>
+			<div className="valuedisplay" data-isactive={valuesActive} onMouseEnter={valuesOnEnter} onMouseLeave={valuesOnLeave}>
 				<table>
 					<thead>
 						<tr>

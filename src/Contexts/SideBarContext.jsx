@@ -102,7 +102,6 @@ const SideBarContextProvider = ({children}) => {
 	const createJsonImport = (value) => {
 		try {
 			const data = JSON.parse(value)
-			console.log(data)
 			setNewImport(data)
 		} catch (error) {
 			console.error(error)
@@ -117,7 +116,13 @@ const SideBarContextProvider = ({children}) => {
 	 * @param {string} value - The value from text field.
 	 */
 	const createUrlImport = (value) => {
-		console.log('yippie')
+		if (/^https?:\/\//.test(value)) {
+			setNewImport({side: value.split('/')[3], route: value.split('/')[4], champions: value.split('/')[5]})
+		} else {
+			// Maybe add error display
+			console.log('The URL does not start with http:// or https://')
+		}
+		setUrlImportActive(false)
 	}
 
 	return <SideBarContext.Provider

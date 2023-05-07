@@ -28,7 +28,6 @@ const SideBar = () => {
 									setJsonImportActive(true)
 								}}
 								urlClick={() => {
-									console.log('clicked')
 									setUrlImportActive(true)
 								}}
 							/>
