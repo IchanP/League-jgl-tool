@@ -81,6 +81,7 @@ export const championNames = [
 	'Mordekaiser',
 	'Morgana',
 	'Nami',
+	'Naafiri',
 	'Nasus',
 	'Nautilus',
 	'Neeko',
