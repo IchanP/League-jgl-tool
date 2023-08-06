@@ -12,7 +12,7 @@ import React from 'react'
 const DownloadOptions = ({optiosnActive, onMouseEnter, onMouseLeave}) => {
 	return ( 
 		<div className="downloadoptionscontainer" data-isactive={optiosnActive} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-			<a href="https://dl.dropboxusercontent.com/s/g606sxd7gbpepdk/electron-league-app-1.0.0-setup.exe?dl=0" className='downloadLink' download="true">Windows</a>
+			<a href="https://github.com/HaatoChan/league-project" className='downloadLink'>Windows</a>
 		</div>
 	)
 }
