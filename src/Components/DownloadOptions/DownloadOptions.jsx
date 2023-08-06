@@ -12,7 +12,7 @@ import React from 'react'
 const DownloadOptions = ({optiosnActive, onMouseEnter, onMouseLeave}) => {
 	return ( 
 		<div className="downloadoptionscontainer" data-isactive={optiosnActive} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-			<a href="https://github.com/HaatoChan/league-project" className='downloadLink'>Windows</a>
+			<a href="https://github.com/HaatoChan/league-project" rel="noreferrer" className='downloadLink' target="_blank" >Windows</a>
 		</div>
 	)
 }
