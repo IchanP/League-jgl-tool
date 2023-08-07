@@ -63,7 +63,7 @@ function App() {
 
 	return (
 		<div className="App">
-			<h1 className="mainTitle">Jingle Gap</h1>
+			<h1 className="mainTitle">PAL Routes</h1>
 			<CampSelectionContextProvider>		
 				<ValuesDisplay />
 				<Copied />
