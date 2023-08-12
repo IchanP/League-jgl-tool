@@ -15,7 +15,7 @@ const JsonImportDisplay = () => {
 				<div className="setimport" onClick={(e) => e.stopPropagation()}>
 					<h1 className="importh1">Import JSON</h1>
 					<textarea placeholder='Paste your import here' id="textareaImport" cols="30" rows="10" className='importTextArea'></textarea>
-					<button className="cancelimport" onClick={() => setJsonImportActive(false)}>X</button>
+					<button className="cancelimportX" onClick={() => setJsonImportActive(false)}>X</button>
 					<button className='importbutton' data-testid="importPopup" onClick={() => {
 						const textarea = document.getElementById('textareaImport')
 						createJsonImport(textarea.value)

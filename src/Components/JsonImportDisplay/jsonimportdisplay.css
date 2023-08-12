@@ -41,21 +41,24 @@
     font-weight: bold;
 }
 
-.cancelimport {
+.cancelimportX {
     position: absolute;
-    top: 1%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 2%;
     right: 2%;
-    cursor: pointer;
-    background-color: red;
-    border: 2px solid rgba(0, 0, 0);
-    font-weight: bold;
     width: 3%;
     height: 3%;
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-    border-radius: 50%;
+    background-color: rgba(161, 41, 41, 0.438);
+    border: 0.1px solid white;
+    font-weight: bold;
+    cursor: pointer;
     color: white;
     text-align: center;
-    font-weight: bold;
+    font-size: 1.1rem;
+    padding: 0.1rem;
+    user-select: none;
 }
 
 .importP {
