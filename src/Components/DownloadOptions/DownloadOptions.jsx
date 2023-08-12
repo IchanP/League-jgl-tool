@@ -12,7 +12,7 @@ import React from 'react'
 const DownloadOptions = ({optiosnActive, onMouseEnter, onMouseLeave}) => {
 	return ( 
 		<div className="downloadoptionscontainer" data-isactive={optiosnActive} onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
-			<a href="https://github.com/HaatoChan/league-project/releases/download/v0.9.9/pal-app-0.9.9-setup.exe" download="true" rel="noreferrer" className='downloadLink' target="_blank" >Windows</a>
+			<a href="https://github.com/HaatoChan/league-project/releases/download/v1.0.0/pal-app-1.0.0-setup.exe" download="true" rel="noreferrer" className='downloadLink' target="_blank" >Windows</a>
 		</div>
 	)
 }
